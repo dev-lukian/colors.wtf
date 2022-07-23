@@ -4,7 +4,7 @@ import styles from './Navbar.module.css';
 const Navbar = () => {
   return (
     <div className={styles.navbarWrapper}>
-      <div></div>
+      <div>Logo</div>
       <div className={styles.buttonWrapper}>
         <button className={cn('button')}>explore</button>
         <button className={cn('button')}>about</button>
