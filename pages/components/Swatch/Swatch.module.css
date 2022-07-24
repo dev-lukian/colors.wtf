@@ -1,0 +1,9 @@
+.swatchWrapper {
+  padding: 1rem;
+}
+
+.swatch {
+  border-radius: 50%;
+  height: 6rem;
+  width: 6rem;
+}

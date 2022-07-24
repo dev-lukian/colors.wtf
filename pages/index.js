@@ -3,6 +3,26 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 import Navbar from './components/Navbar/Navbar';
+import SwatchGrid from './components/SwatchGrid/SwatchGrid';
+
+const SWATCHES = [
+  {color: "red"},
+  {color: "blue"},
+  {color: "green"},
+  {color: "white"},
+  {color: "red"},
+  {color: "blue"},
+  {color: "green"},
+  {color: "white"},
+  {color: "red"},
+  {color: "blue"},
+  {color: "green"},
+  {color: "white"},
+  {color: "red"},
+  {color: "blue"},
+  {color: "green"},
+  {color: "white"},
+]
 
 export default function Home() {
   return (
@@ -13,6 +33,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <SwatchGrid swatches={SWATCHES} />
     </>
   );
 }
