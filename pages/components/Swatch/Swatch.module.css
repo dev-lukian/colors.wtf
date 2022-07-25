@@ -6,4 +6,16 @@
   border-radius: 50%;
   height: 6rem;
   width: 6rem;
+  transition: transform 0.3s ease;
 }
+
+.tooltip {
+  background-color: red;
+  display: none;
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+.swatch:hover + .tooltip { display: block; }

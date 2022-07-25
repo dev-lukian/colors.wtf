@@ -6,22 +6,27 @@ import Navbar from './components/Navbar/Navbar';
 import SwatchGrid from './components/SwatchGrid/SwatchGrid';
 
 const SWATCHES = [
-  {color: "red"},
-  {color: "blue"},
-  {color: "green"},
-  {color: "white"},
-  {color: "red"},
-  {color: "blue"},
-  {color: "green"},
-  {color: "white"},
-  {color: "red"},
-  {color: "blue"},
-  {color: "green"},
-  {color: "white"},
-  {color: "red"},
-  {color: "blue"},
-  {color: "green"},
-  {color: "white"},
+  {
+    color: "red",
+    name: "Reddy",
+    hex: "0xFF0000",
+    rgb: "(255, 0, 0)",
+    owner: "0x8d1bb337E3291f41ff1434F61D6155bBdE63EE58"
+  },
+  {
+    color: "green",
+    name: "greennn",
+    hex: "0x00FF00",
+    rgb: "(0, 255, 0)",
+    owner: "cameron.eth"
+  },
+  {
+    color: "blue",
+    name: "blu",
+    hex: "0x0000FF",
+    rgb: "(0, 0, 255)",
+    owner: "cameronmorrongiello.eth"
+  },
 ]
 
 export default function Home() {
