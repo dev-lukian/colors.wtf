@@ -1,0 +1,25 @@
+.colorMixWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 3rem;
+  padding-bottom: 8rem;
+}
+
+.circle {
+  border-radius: 100%;
+  width: 12.5rem;
+  height: 12.5rem;
+  background-color: var(--gray-1);
+}
+
+.bigCircle {
+  width: 18.75rem;
+  height: 18.75rem;
+}
+
+.smallCircle {
+  position: relative;
+  bottom: -5rem;
+}
