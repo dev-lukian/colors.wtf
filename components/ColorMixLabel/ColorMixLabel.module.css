@@ -1,0 +1,20 @@
+.colorMixLabelWrapper {
+  position: relative;
+  margin: 0 auto;
+  background-color: var(--gray-3);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.closeButton {
+  border-radius: 50%;
+  background-color: var(--gray-4);
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  padding: 10px
+}
+
+.closeButton:hover {
+  cursor: pointer;
+}

@@ -1,10 +1,10 @@
 import ColorGrid from '../ColorGrid/ColorGrid';
 import styles from './ColorScroll.module.css';
 
-const ColorScroll = () => {
+const ColorScroll = ({colors}) => {
   return (
     <div className={styles.scrollWrapper}>
-      <ColorGrid />
+      <ColorGrid colors={colors}/>
     </div>
   );
 };
