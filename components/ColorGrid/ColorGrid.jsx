@@ -16,8 +16,6 @@ const ColorGrid = ({colors}) => {
           <p>No colors found.</p>
         )
       }
-
-      
     </div>
   );
 };

@@ -176,9 +176,6 @@ export default function Home() {
   //   left, setLeft,
   // }), [right, left]);
 
-  
-
-
   return (
     <>
       <Head>

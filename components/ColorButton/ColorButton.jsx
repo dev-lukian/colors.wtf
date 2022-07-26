@@ -3,7 +3,6 @@ import { useEffect, useState, useContext } from 'react';
 import styles from './ColorButton.module.css';
 
 import Tooltip from '../Tooltip/Tooltip';
-
 import { ColorMixContext } from '../../context/ColorMixContext';
 
 const ColorButton = ({ name, rgb, owner }) => {
@@ -12,7 +11,6 @@ const ColorButton = ({ name, rgb, owner }) => {
   const {rightContext, leftContext} = useContext(ColorMixContext); 
   const [right, setRight] = rightContext;
   const [left, setLeft] = leftContext;
-
 
   const cssRGB = 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', 1)';
   const rgb8Percent = 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', 0.08)';
@@ -38,7 +36,6 @@ const ColorButton = ({ name, rgb, owner }) => {
     }
 
   }
-
 
   return (
     <div className={styles.circleWrapper}>
