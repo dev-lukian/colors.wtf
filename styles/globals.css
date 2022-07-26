@@ -49,3 +49,45 @@ a {
   background-color: var(--gray-3);
   border-color: var(--gray-3);
 }
+
+.searchInput {
+  box-shadow: none;
+  color: var(--white);
+  border-color: var(--gray-3);
+  border-radius: 8px;
+  border:2px solid var(--gray-3);
+  background-color: transparent;
+  padding: 0.5rem;
+}
+
+.searchInput:focus {
+  outline: none !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--white);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:var(--white);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--white);
+}
+
+.filterSelect {
+  box-shadow: none;
+  color: var(--white);
+  border-color: var(--gray-3);
+  border-radius: 8px;
+  border: 2px solid var(--gray-3);
+  background-color: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  outline: none !important;
+}
