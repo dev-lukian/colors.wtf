@@ -50,6 +50,21 @@ a {
   border-color: var(--gray-3);
 }
 
+.select {
+  box-shadow: none;
+  color: var(--white);
+  border-color: var(--gray-3);
+  border-radius: 8px;
+  border: 2px solid var(--gray-3);
+  background-color: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.select:focus {
+  outline: none !important;
+}
+
 .searchInput {
   box-shadow: none;
   color: var(--white);
@@ -75,19 +90,4 @@ a {
 
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: var(--white);
-}
-
-.filterSelect {
-  box-shadow: none;
-  color: var(--white);
-  border-color: var(--gray-3);
-  border-radius: 8px;
-  border: 2px solid var(--gray-3);
-  background-color: transparent;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.filterSelect:focus {
-  outline: none !important;
 }
