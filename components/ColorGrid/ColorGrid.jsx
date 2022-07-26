@@ -3,30 +3,19 @@ import styles from './ColorGrid.module.css';
 
 import ColorButton from '../ColorButton/ColorButton';
 
-const randomColors = () => {
-  let colorArray = [];
-
-  for (let i = 0; i < 30; i++) {
-    let color = {
-      rgb: {
-        r: Math.floor(Math.random() * 255),
-        g: Math.floor(Math.random() * 255),
-        b: Math.floor(Math.random() * 255),
-      },
-    };
-
-    colorArray.push(color);
-  }
-
-  return colorArray;
-};
-
-const ColorGrid = () => {
+const ColorGrid = ({colors}) => {
   return (
     <div className={styles.colorGridWrapper}>
-      {randomColors().map((color, index) => {
-        return <ColorButton key={index} rgb={color.rgb} />;
-      })}
+      
+      {
+        colors.length > 0 ? (
+          colors.map((color, index) => {
+            return <ColorButton key={index} name={color.name} rgb={color.rgb} owner={color.owner} />;
+          })
+        ) : (
+          <p>No colors found.</p>
+        )
+      }
     </div>
   );
 };

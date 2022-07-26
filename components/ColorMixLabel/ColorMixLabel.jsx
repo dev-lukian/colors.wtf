@@ -1,6 +1,6 @@
-import styles from './Tooltip.module.css';
+import styles from './ColorMixLabel.module.css';
 
-const Tooltip = ({name, rgb, owner}) => {
+const ColorMixLabel = ({remove, name, rgb, owner}) => {
 
   let ownerDisplay;
 
@@ -25,8 +25,13 @@ const Tooltip = ({name, rgb, owner}) => {
   const hexDisplay = "#" + rgb.r.toString(16).toUpperCase().padStart(2, "0") + rgb.g.toString(16).toUpperCase().padStart(2, "0") + rgb.b.toString(16).toUpperCase().padStart(2, "0");
   const rgbDisplay = "rgb(" + rgb.r + ", " + rgb.g + ", " + rgb.b + ")";
 
+  const handleRemove = () => {
+    remove(null);
+  }
+
   return (
-    <div className={styles.tooltipWrapper}>
+    <div className={styles.colorMixLabelWrapper}>
+      <div onClick={handleRemove} className={styles.closeButton}>x</div>
       <div>{nameDisplay}</div>
       <div>{hexDisplay}</div>
       <div>{rgbDisplay}</div>
@@ -35,4 +40,4 @@ const Tooltip = ({name, rgb, owner}) => {
   );
 };
 
-export default Tooltip;
+export default ColorMixLabel;
