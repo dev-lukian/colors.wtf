@@ -2,7 +2,7 @@ import styles from './ColorGrid.module.css';
 
 import ColorButton from '../ColorButton/ColorButton';
 
-const ColorGrid = ({colors}) => {
+const ColorGrid = ({ colors }) => {
   return (
     <div className={styles.colorGridWrapper}>
       {

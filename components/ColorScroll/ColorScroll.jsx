@@ -93,8 +93,8 @@ const ColorScroll = ({colors}) => {
   }
 
   const handleFilterChange = (event) => {
-    setFilter({value: event.target.value});
-  }
+    setFilter({ value: event.target.value });
+  };
 
   return (
     <div className={styles.scrollWrapper}>
