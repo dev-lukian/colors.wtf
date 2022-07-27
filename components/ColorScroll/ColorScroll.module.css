@@ -1,0 +1,32 @@
+.scrollWrapper {
+  background-color: var(--gray-1);
+  width: 50%;
+  padding: 3rem 5rem;
+  border-radius: 18px 18px 0px 0px;
+  overflow-y: auto;
+}
+
+/*width*/
+.scrollWrapper::-webkit-scrollbar {
+  width: 16px;
+}
+
+/*track*/
+.scrollWrapper::-webkit-scrollbar-track {
+  background: var(--gray-1);
+}
+
+/*thumb*/
+.scrollWrapper::-webkit-scrollbar-thumb {
+  background: var(--gray-2);
+  border-radius: 18px;
+}
+
+/*thumb hover*/
+.scrollWrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-3);
+}
+
+.searchFilterWrapper {
+  flex-direction: row;
+}

@@ -1,9 +1,25 @@
+:root {
+  --black: #101010;
+  --gray-1: #181818;
+  --gray-2: #292929;
+  --gray-3: #525252;
+  --gray-4: #9f9fa0;
+  --white: #ffffff;
+
+  --font-size-30: 1.875rem;
+  --font-size-20: 1.25rem;
+  --font-size-12: 0.75rem;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Inter;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--black);
+  /* padding: 1.5rem 2rem; */
 }
 
 a {
@@ -13,4 +29,70 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: Inter;
+}
+
+.button {
+  padding: 0.6rem 2rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 2px solid var(--gray-2);
+  color: var(--white);
+  font-size: var(--font-size-30);
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.solidButton {
+  background-color: var(--gray-2);
+}
+
+.button:hover {
+  background-color: var(--gray-3);
+  border-color: var(--gray-3);
+}
+
+.searchInput {
+  box-shadow: none;
+  color: var(--white);
+  border-color: var(--gray-3);
+  border-radius: 8px;
+  border: 2px solid var(--gray-3);
+  background-color: transparent;
+  padding: 0.5rem;
+}
+
+.searchInput:focus {
+  outline: none !important;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--white);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--white);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--white);
+}
+
+.filterSelect {
+  box-shadow: none;
+  color: var(--white);
+  border-color: var(--gray-3);
+  border-radius: 8px;
+  border: 2px solid var(--gray-3);
+  background-color: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  outline: none !important;
 }
