@@ -1,10 +1,18 @@
 .colorMixWrapper {
-  width: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.circlesWrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding-top: 3rem;
-  padding-bottom: 8rem;
+  align-items: center;
+  padding-bottom: 3rem;
 }
 
 .circle {
@@ -15,11 +23,24 @@
 }
 
 .bigCircle {
+  position: relative;
+  z-index: 5;
   width: 18.75rem;
   height: 18.75rem;
+  transition: background-color 0.3s ease;
 }
 
 .smallCircle {
   position: relative;
+  z-index: 1;
   bottom: -5rem;
+  transition: transform 1s ease;
+}
+
+.leftCircleMove {
+  transform: scale(0.75) translate(5rem, -2rem);
+}
+
+.rightCircleMove {
+  transform: scale(0.75) translate(-5rem, -2rem);
 }

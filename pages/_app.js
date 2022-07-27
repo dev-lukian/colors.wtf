@@ -3,12 +3,14 @@ import '../styles/globals.css';
 
 import Navbar from '../components/Navbar/Navbar';
 
+import styles from '../styles/app.module.css';
+
 function MyApp({ Component, pageProps }) {
   return (
-  <>
-    <Navbar/>
-    <Component {...pageProps} />
-  </>
+    <div className={styles.rootWrapper}>
+      <Navbar />
+      <Component {...pageProps} />
+    </div>
   );
 }
 
