@@ -15,7 +15,7 @@ const ColorScroll = ({colors}) => {
   const [filter, setFilter] = useState({value: ""})
 
   useEffect(()=> {
-    
+
     // TODO:
     // if(isValid) {
     //   // make api call with http://colors.wtf/api/query?search={search.value}&sort={sort.value}&filter={filter.value}
@@ -149,7 +149,18 @@ const ColorScroll = ({colors}) => {
           </optgroup>
         </select>
       </div>
-      <ColorGrid colors={visableColors} />
+      {
+        isValid ? (
+          visableColors.length > 0 ? (
+            <ColorGrid colors={visableColors} />
+          ) : (
+            <p>No colors found.</p>
+          )
+        ) : (
+          <p>Invalid {searchOption.value}.</p>
+        )
+      }
+      
     </div>
   );
 };
