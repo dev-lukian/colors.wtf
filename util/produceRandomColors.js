@@ -7,6 +7,12 @@ const randomColors = (n) => {
     const g = Math.floor(Math.random() * 255);
     const b = Math.floor(Math.random() * 255);
 
+    let randomAttribues = [];
+
+    const COLOR_LEVELS = ["", "primary", "secondary"]
+    const COLOR_TYPES = ["", "html"]
+
+
     let color = {
       name: "Color name",
       rgb: {

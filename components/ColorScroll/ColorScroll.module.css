@@ -30,3 +30,7 @@
 .searchFilterWrapper {
   flex-direction: row;
 }
+
+.searchWrapper {
+  flex-direction: row;
+}
