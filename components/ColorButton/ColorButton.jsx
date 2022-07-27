@@ -25,8 +25,6 @@ const ColorButton = ({ name, rgb, owner }) => {
       owner: owner,
     }
 
-    console.log(color);
-
     if (right == null && left == null) {
       setLeft(color);
     } else if (right == null) {

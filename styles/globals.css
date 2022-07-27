@@ -5,6 +5,7 @@
   --gray-3: #525252;
   --gray-4: #9f9fa0;
   --white: #ffffff;
+  --warning: #ff3e3e;
 
   --font-size-30: 1.875rem;
 }
@@ -81,13 +82,15 @@ a {
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--white);
-  opacity: 1; /* Firefox */
+  opacity: 0.80; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color:var(--white);
+  opacity: 0.80;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: var(--white);
+  opacity: 0.80;
 }
