@@ -1,0 +1,5 @@
+.homeWrapper {
+  width: 100%;
+  display: flex;
+  height: calc(100% - 8rem);
+}
