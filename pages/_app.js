@@ -1,17 +1,7 @@
-import '../styles/fonts.css';
-import '../styles/globals.css';
-
-import Navbar from '../components/Navbar/Navbar';
-
-import styles from '../styles/app.module.css';
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <div className={styles.rootWrapper}>
-      <Navbar />
-      <Component {...pageProps} />
-    </div>
-  );
+  return <Component {...pageProps} />
 }
 
-export default MyApp;
+export default MyApp
