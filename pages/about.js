@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function About() {
   return (
@@ -10,7 +9,7 @@ export default function About() {
         <meta name="description" content="about colors.wtf" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>About</h1>
+      <h1>about</h1>
       <div style={{ textAlign: 'center', width: '50%', margin: '0 auto' }}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ipsum elit, posuere ut augue ut, gravida

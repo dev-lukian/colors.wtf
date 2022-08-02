@@ -1,7 +1,7 @@
 .scrollWrapper {
   background-color: var(--gray-1);
-  width: 50%;
-  padding: 3rem 5rem;
+  width: 100%;
+  padding: 0rem 5rem 3rem 5rem;
   border-radius: 18px 18px 0px 0px;
   overflow-y: auto;
 }
@@ -27,10 +27,36 @@
   background: var(--gray-3);
 }
 
-.searchFilterWrapper {
+.searchFilterSortWrapper { 
+  padding: 1rem;
+  padding-top: 3rem;
+  margin-bottom: 1rem;
+  top: 0;
+  z-index: 5;
+  position: sticky;
+  background-color: var(--gray-1);
+}
+
+.searchSortWrapper {
+  display: flex;
   flex-direction: row;
+  margin-bottom: 0.5rem;
 }
 
 .searchWrapper {
+  display: flex;
   flex-direction: row;
+  border-color: var(--gray-3);
+  border-radius: 8px;
+  border: 2px solid var(--gray-3);
+  margin-right: 0.5rem;
+}
+
+.noOutline {
+  border-width: 0;
+}
+
+.rightBorder {
+  border-radius: 0px;
+  border-right: 2px solid var(--gray-3);
 }

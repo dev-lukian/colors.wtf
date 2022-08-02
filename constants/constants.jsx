@@ -1,8 +1,28 @@
 export const COLORS = [
   {
-    name: 'Color name',
-    rgb: { r: 116, g: 150, b: 91 },
-    owner: '0x8d1bb337E3291f41ff1434F61D6155bBdE63EE58',
+    name: 'red',
+    rgb: { r: 255, g: 0, b: 0 },
+    owner: '0xE0515cDC12484F4D20446e8a646E2bbCBE2F6eC3',
+  },
+  {
+    name: 'green',
+    rgb: { r: 0, g: 255, b: 0 },
+    owner: '0xE0515cDC12484F4D20446e8a646E2bbCBE2F6eC3',
+  },
+  {
+    name: 'blue',
+    rgb: { r: 0, g: 0, b: 255 },
+    owner: '0xE0515cDC12484F4D20446e8a646E2bbCBE2F6eC3',
+  },
+  {
+    name: 'white',
+    rgb: { r: 255, g: 255, b: 255 },
+    owner: '0xE0515cDC12484F4D20446e8a646E2bbCBE2F6eC3',
+  },
+  {
+    name: 'black',
+    rgb: { r: 0, g: 0, b: 0 },
+    owner: '0xE0515cDC12484F4D20446e8a646E2bbCBE2F6eC3',
   },
   {
     name: 'Color name',
