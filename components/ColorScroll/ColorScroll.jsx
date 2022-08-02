@@ -1,10 +1,12 @@
 import cn from 'classnames';
 import { useState, useEffect } from 'react';
+import ColorButton from '../ColorButton/ColorButton';
+import ColorButtonModal from '../ColorButtonModal/ColorButtonModal';
 
 import ColorGrid from '../ColorGrid/ColorGrid';
 import styles from './ColorScroll.module.css';
 
-const ColorScroll = ({colors}) => {
+const ColorScroll = ({colors, modal}) => {
 
   const [isValid, setIsValid] = useState(true);
   const [visableColors, setVisableColors] = useState(colors);
@@ -18,7 +20,7 @@ const ColorScroll = ({colors}) => {
 
     // TODO:
     // if(isValid) {
-    //   // make api call with http://colors.wtf/api/query?search={search.value}&sort={sort.value}&filter={filter.value}
+    //   // make api call with http://colors.wtf/api/query?search={search.value}searchOption{searchOption.value}&sort={sort.value}&filter={filter.value}
     // }
 
     const filteredColors = colors.filter(color => search.value == "" || color.name.includes(event.target.value));
@@ -98,41 +100,43 @@ const ColorScroll = ({colors}) => {
 
   return (
     <div className={styles.scrollWrapper}>
-      <div className={styles.searchFilterWrapper}>
-        <div className={styles.searchWrapper}>
+      <div className={styles.searchFilterSortWrapper}>
+        <div className={styles.searchSortWrapper}>
+          <div className={styles.searchWrapper}>
+            <select 
+              className={cn("select", styles.noOutline, styles.rightBorder)} 
+              name="serachOption" 
+              id="serachOption"
+              onChange={handleSearchOptionChange}
+            >
+              <option value="name">name</option>
+              <option value="rgb">rgb</option> 
+              <option value="hex">hex</option>
+              <option value="owner">owner</option>
+            </select>
+
+            <input 
+              className={cn("searchInput", styles.noOutline)}
+              type={serachConfig.type}
+              required
+              id="searchBar"
+              role="searchBar"
+              placeholder={serachConfig.placeholder}
+              onChange={handleSearchChange}
+              style={{color: isValid || search.length == 0? "var(--white)" : "var(--warning)"}}
+            />
+          </div>
+
           <select 
             className={cn("select")} 
-            name="serachOption" 
-            id="serachOption"
-            onChange={handleSearchOptionChange}
+            name="sort" 
+            id="sort"
+            onChange={handleSortChange}
           >
-            <option value="name">name</option>
-            <option value="rgb">rgb</option> 
-            <option value="hex">hex</option>
-            <option value="owner">owner</option>
+            <option value="Newest Minted">newest minted</option>
+            <option value="Oldest Minted">oldest minted</option> 
           </select>
-
-          <input 
-            className={cn("searchInput")}
-            type={serachConfig.type}
-            required
-            id="searchBar"
-            role="searchBar"
-            placeholder={serachConfig.placeholder}
-            onChange={handleSearchChange}
-            style={{color: isValid ? "var(--white)" : "var(--warning)"}}
-          />
         </div>
-
-        <select 
-          className={cn("select")} 
-          name="sort" 
-          id="sort"
-          onChange={handleSortChange}
-        >
-          <option value="Newest Minted">newest minted</option>
-          <option value="Oldest Minted">oldest minted</option> 
-        </select>
 
         {/* TODO: convert into dropdown */}
         <select 
@@ -152,7 +156,7 @@ const ColorScroll = ({colors}) => {
       {
         isValid ? (
           visableColors.length > 0 ? (
-            <ColorGrid colors={visableColors} />
+              <ColorGrid ColorButton={modal ? ColorButtonModal : ColorButton} colors={visableColors} />
           ) : (
             <p>No colors found.</p>
           )

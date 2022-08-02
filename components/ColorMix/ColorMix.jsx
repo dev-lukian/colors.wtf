@@ -58,7 +58,7 @@ const ColorMix = () => {
           )}
         </div>
       </div>
-      <MintButton />
+      <MintButton right={right} left={left} mixed={mixed}/>
     </div>
   );
 };
