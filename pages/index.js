@@ -32,9 +32,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>colors.wtf</title>
+        <title>mint</title>
         <meta name="description" content="colors.wtf mixing and minting app" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <ColorMixContext.Provider
         value={{

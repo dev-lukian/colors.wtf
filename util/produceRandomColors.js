@@ -29,4 +29,4 @@ const randomColors = (n) => {
   console.log(colorArray);
 }
 
-randomColors(30);
+randomColors(100);

@@ -18,9 +18,9 @@ export default function Explore() {
   return (
     <>
       <Head>
-        <title>Explore</title>
+        <title>explore</title>
         <meta name="description" content="explore colors.wtf" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <ModalContext.Provider
         value={[modalColor, setModalColor]}

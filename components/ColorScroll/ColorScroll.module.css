@@ -50,6 +50,57 @@
   border-radius: 8px;
   border: 2px solid var(--gray-3);
   margin-right: 0.5rem;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.filterWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.filterWrapper > * {
+  margin: 0.5em 0;
+}
+
+.filterChip {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--gray-2);
+  border-radius: 8rem;
+  padding: 8px 15px 8px 15px;
+  align-items: center;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+.closeButton {
+  border-radius: 50%;
+  background-color: var(--gray-3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+  padding: 2px;
+}
+
+.closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.7);
+}
+
+.closeButton:hover {
+  background-color: var(--gray-4);
+}
+
+.filterSelectWrapper {
+  width: 10rem;
 }
 
 .noOutline {
