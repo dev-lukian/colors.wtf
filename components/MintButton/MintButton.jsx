@@ -53,7 +53,8 @@ const MintButton = ({right, left, mixed}) => {
         <div className={styles.gridInputLarge}>{
           mixed ?  ( 
             <input 
-              className={cn("searchInput")}
+              className={cn("searchInput", styles.noOutline)}
+              autoFocus
               type="text"
               required
               id="name"
@@ -78,10 +79,15 @@ const MintButton = ({right, left, mixed}) => {
       </div>
       <div
         className={cn(styles.buttonWrapper, styles.gridChild)}
-        style={{ backgroundColor: mixed && getCssRgb(mixed) }}
+        style={{ backgroundColor: name.length > 0 && mixed && getCssRgb(mixed), cursor: name.length > 0 && mixed ? "pointer" : "not-allowed" }}
         onClick={onMint}
       >
-        <div className={styles.gridInputLarge}>mint</div>
+        <div 
+          className={styles.gridInputLarge}
+          style={{color: name.length > 0 && mixed ? "var(--white)" : "var(--gray-3)"}}
+        >
+            mint
+        </div>
       </div>
     </div>
   );

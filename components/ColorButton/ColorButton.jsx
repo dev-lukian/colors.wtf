@@ -60,7 +60,7 @@ const ColorButton = ({ name, rgb, owner }) => {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={handleClick}
-        style={{ backgroundColor: cssRGB, boxShadow: hover && shadow }}
+        style={{ backgroundColor: cssRGB, boxShadow: hover ? shadow : "none" }}
       >
         {activeSide && <div className={styles.clickedIndicator}>{activeSide}</div>}
       </div>

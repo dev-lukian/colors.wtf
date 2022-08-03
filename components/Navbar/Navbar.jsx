@@ -6,6 +6,8 @@ import { useContext, useEffect } from 'react';
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 
+import Logo from '../../public/logo.svg'
+
 import { providerConfig } from '../../config/providerConfig';
 
 import { AccountContext } from '../../context/AccountConext';
@@ -43,7 +45,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbarWrapper}>
       <Link href="/">
-        <div style={{ fontWeight: 'bold', fontSize: 'var(--font-size-30)', cursor: 'pointer' }}>colors.wtf</div>
+        <Logo style={{cursor: "pointer"}}/>
       </Link>
       <div className={styles.buttonWrapper}>
       <Link href="/">

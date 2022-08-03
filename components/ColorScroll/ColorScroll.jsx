@@ -3,12 +3,22 @@ import { useState, useEffect } from 'react';
 import ColorButton from '../ColorButton/ColorButton';
 import ColorButtonModal from '../ColorButtonModal/ColorButtonModal';
 
+import Close from '../../public/close.svg';
+
 import ColorGrid from '../ColorGrid/ColorGrid';
 import styles from './ColorScroll.module.css';
+
+const FILTER_OPTIONS = [
+  <option key="primary color" value="primary color">primary color</option>,
+  <option key="secondary color" value="secondary color">secondary color</option>,
+  <option key="html color" value="html color">html color</option>,
+]
 
 const ColorScroll = ({colors, modal}) => {
 
   const [isValid, setIsValid] = useState(true);
+  const [filterOptions, setFilterOptions] = useState(FILTER_OPTIONS);
+  const [filterSelected, setFilterSelected] = useState([])
   const [visableColors, setVisableColors] = useState(colors);
   const [searchOption, setSearchOption] = useState({value: "name"})
   const [serachConfig, setSearchConfig] = useState({type: "text", placeholder: "name"})
@@ -95,8 +105,35 @@ const ColorScroll = ({colors, modal}) => {
   }
 
   const handleFilterChange = (event) => {
-    setFilter({ value: event.target.value });
+    let newFilterOptions = []
+    const selectedFilterOptionValue = event.target.value;
+    filterOptions.map((op) =>{
+      if(op.props.value != selectedFilterOptionValue) {
+        newFilterOptions.push(op);
+      } else {
+        filterSelected.push(selectedFilterOptionValue);
+      }
+    });
+    setFilterOptions(newFilterOptions);
   };
+
+  const handleRemove = (filterValue) => {
+    let newFilterSelected = []
+    filterSelected.map((f) => {
+      if(f != filterValue) {
+        newFilterSelected.push(f)
+      }
+    });
+
+    let newFilterOptions = []
+    FILTER_OPTIONS.map((f) => {
+      if(!newFilterSelected.includes(f.props.value)) {
+        newFilterOptions.push(f)
+      }
+    })
+    setFilterSelected(newFilterSelected);
+    setFilterOptions(newFilterOptions);
+  }
 
   return (
     <div className={styles.scrollWrapper}>
@@ -139,19 +176,34 @@ const ColorScroll = ({colors, modal}) => {
         </div>
 
         {/* TODO: convert into dropdown */}
-        <select 
-          className={cn("select")} 
-          name="filter" 
-          id="filter"
-          onChange={handleFilterChange}
-        >
-          <option value="">filter</option>
-          <optgroup label = "attributes">
-            <option value="primary color">primary color</option>
-            <option value="secondary color">secondary color</option>
-            <option value="html color">html color</option>
-          </optgroup>
-        </select>
+        <div className={styles.filterWrapper}>
+          <select 
+            className={cn("select", styles.filterSelectWrapper)} 
+            name="filter" 
+            id="filter"
+            onChange={handleFilterChange}
+          >
+            <option value="">filter</option>
+            {
+              filterOptions.map((op) => {
+                return op
+              })
+            }
+          </select>
+          {
+            filterSelected.map((op) => {
+              return (
+                <div className={styles.filterChip}>
+                  {op}
+                  <div onClick={() => handleRemove(op)} className={styles.closeButton}>
+                    <Close className={styles.closeIcon} />
+                  </div>
+                </div>
+              )
+            })
+          }
+
+        </div>
       </div>
       {
         isValid ? (
