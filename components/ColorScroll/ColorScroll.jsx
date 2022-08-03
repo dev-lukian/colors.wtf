@@ -155,6 +155,7 @@ const ColorScroll = ({colors, modal}) => {
             <input 
               className={cn("searchInput", styles.noOutline)}
               type={serachConfig.type}
+              autoComplete="off"
               required
               id="searchBar"
               role="searchBar"
@@ -183,7 +184,7 @@ const ColorScroll = ({colors, modal}) => {
             id="filter"
             onChange={handleFilterChange}
           >
-            <option value="">filter</option>
+            <option key="default" value="">filter</option>
             {
               filterOptions.map((op) => {
                 return op
@@ -191,9 +192,9 @@ const ColorScroll = ({colors, modal}) => {
             }
           </select>
           {
-            filterSelected.map((op) => {
+            filterSelected.map(op => {
               return (
-                <div className={styles.filterChip}>
+                <div key={op} className={styles.filterChip}>
                   {op}
                   <div onClick={() => handleRemove(op)} className={styles.closeButton}>
                     <Close className={styles.closeIcon} />

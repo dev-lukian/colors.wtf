@@ -55,6 +55,7 @@ const MintButton = ({right, left, mixed}) => {
             <input 
               className={cn("searchInput", styles.noOutline)}
               autoFocus
+              autoComplete="off"
               type="text"
               required
               id="name"
