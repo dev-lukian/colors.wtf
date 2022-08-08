@@ -39,8 +39,8 @@ const ColorMixLabel = ({ side, remove, name, rgb, owner }) => {
         <Close className={styles.closeIcon} />
       </div>
       <div>{nameDisplay}</div>
-      <div>{hexDisplay}</div>
       <div>{rgbDisplay}</div>
+      <div>{hexDisplay}</div>
       <div>{ownerDisplay}</div>
     </div>
   );

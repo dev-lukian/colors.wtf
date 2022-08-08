@@ -47,7 +47,7 @@ export default function Home() {
       >
         <div className={styles.homeWrapper}>
           <ColorMix />
-          <ColorScroll modal={false} colors={COLORS} />
+          <ColorScroll modal={false} />
         </div>
       </ColorMixContext.Provider>
     </>

@@ -1,6 +1,7 @@
 .scrollWrapper {
   background-color: var(--gray-1);
   width: 100%;
+  height: 100%;
   padding: 0rem 5rem 3rem 5rem;
   border-radius: 18px 18px 0px 0px;
   overflow-y: auto;
