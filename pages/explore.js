@@ -28,7 +28,7 @@ export default function Explore() {
         <div className={styles.exploreWrapper}>
         { modalColor ? <Modal/> : null }
         <h1>explore</h1>
-        <ColorScroll modal={true} colors={COLORS}/>
+        <ColorScroll modal={true}/>
         </div>
       </ModalContext.Provider>
 

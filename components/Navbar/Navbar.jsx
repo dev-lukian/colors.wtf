@@ -16,6 +16,8 @@ import { LibraryContext } from '../../context/LibraryContext';
 const Navbar = () => {
 
   let web3Modal;
+  // FIXME: Profile image ?
+  let profileImg;
 
   useEffect(() => {
     web3Modal = new Web3Modal({
@@ -34,7 +36,11 @@ const Navbar = () => {
       const library = new ethers.providers.Web3Provider(provider);
       const accounts = await library.listAccounts();
       setLibrary(library);
-      if (accounts) setAccount(accounts[0]);
+      if (accounts) { 
+        setAccount(accounts[0]); 
+        profileImg =  await library.getAvatar();
+        console.log(profileImg.url)
+      }
     } catch (error) {
       console.log(error);
     }
@@ -67,7 +73,16 @@ const Navbar = () => {
           className={cn('button', 'solidButton')}
           onClick={onConnect}
         >
-          {account ? account.substring(0, 4) + '-' + account.substring(40) : "connect"}
+          {
+            account ? ( 
+              <div>
+                <image src={profileImg?.url}/>
+                 {account.substring(0, 4) + '-' + account.substring(40)} 
+              </div>
+              ) : (
+                "connect"
+              )
+          }
         </button>
       </div>
     </div>

@@ -14,28 +14,62 @@ const FILTER_OPTIONS = [
   <option key="html color" value="html color">html color</option>,
 ]
 
-const ColorScroll = ({colors, modal}) => {
+const ColorScroll = ({modal}) => {
 
   const [isValid, setIsValid] = useState(true);
   const [filterOptions, setFilterOptions] = useState(FILTER_OPTIONS);
-  const [filterSelected, setFilterSelected] = useState([])
-  const [visableColors, setVisableColors] = useState(colors);
-  const [searchOption, setSearchOption] = useState({value: "name"})
-  const [serachConfig, setSearchConfig] = useState({type: "text", placeholder: "name"})
+  const [filterSelected, setFilterSelected] = useState([]);
+  const [visableColors, setVisableColors] = useState([]);
+  const [searchOption, setSearchOption] = useState({value: "name"});
+  const [serachConfig, setSearchConfig] = useState({type: "text", placeholder: "name"});
   const [search, setSearch] = useState({value: ""});
   const [sort, setSort] = useState({value: "newest minted"});
-  const [filter, setFilter] = useState({value: ""})
+  const [filter, setFilter] = useState({value: ""});
 
-  useEffect(()=> {
 
-    // TODO:
-    // if(isValid) {
-    //   // make api call with http://colors.wtf/api/query?search={search.value}searchOption{searchOption.value}&sort={sort.value}&filter={filter.value}
-    // }
+  useEffect(() => {
+    let mounted = true;
+    if(isValid) {
+      const query = 
+      `{
+        colorSearch(text: "${search.value}") 
+        { 
+          rgb 
+          name 
+          owner { 
+            id
+          }
+        } 
+      }`
 
-    const filteredColors = colors.filter(color => search.value == "" || color.name.includes(event.target.value));
-    setVisableColors(filteredColors);
-  },[search, sort, filter])
+      getSearchedColors(query).then(data => {
+        if(mounted) {
+          let visableColors = [];
+          data.data?.colorSearch.map(color => {
+            if(color.id != 0) {
+              visableColors.push(color)
+            }
+          });
+          console.log(visableColors);
+          setVisableColors(visableColors);
+        }
+      });
+    }
+    return () => mounted = false;
+  }, [search])
+
+  function getSearchedColors(query) {
+    return fetch('https://api.thegraph.com/subgraphs/name/0x7b5/colors', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        query
+       })
+    })
+      .then(data => data.json())
+   }
 
   const handleSearchChange = (event) => {
 
@@ -76,7 +110,7 @@ const ColorScroll = ({colors, modal}) => {
       }
     }
 
-    setSearch({value: searchOption});
+    setSearch({value: searchValue});
   }
 
   const handleSearchOptionChange = (event) => {

@@ -5,6 +5,8 @@ import styles from './ColorButton.module.css';
 import Tooltip from '../Tooltip/Tooltip';
 import { ColorMixContext } from '../../context/ColorMixContext';
 
+import { contractRgbToClientRgb } from '../../util/colorConversion';
+
 import isEqual from 'lodash.isequal';
 
 const ColorButton = ({ name, rgb, owner }) => {
@@ -17,15 +19,17 @@ const ColorButton = ({ name, rgb, owner }) => {
   const [leftAnimationInProgress, setLeftAnimationInProgress] = leftAnimationContext;
   const [rightAnimationInProgress, setRightAnimationInProgress] = rightAnimationContext;
 
+  // Convert from contract color to client ... maybe changes this
   const color = {
     name: name,
-    rgb: rgb,
-    owner: owner,
+    rgb: contractRgbToClientRgb(rgb),
+    owner: owner.id,
   };
 
-  const cssRGB = 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', 1)';
-  const rgb8Percent = 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', 0.08)';
-  const rgb32Percent = 'rgba(' + rgb.r + ', ' + rgb.g + ', ' + rgb.b + ', 0.32)';
+
+  const cssRGB = 'rgba(' + color.rgb.r + ', ' + color.rgb.g + ', ' + color.rgb.b + ', 1)';
+  const rgb8Percent = 'rgba(' + color.rgb.r + ', ' + color.rgb.g + ', ' + color.rgb.b + ', 0.08)';
+  const rgb32Percent = 'rgba(' + color.rgb.r + ', ' + color.rgb.g + ', ' + color.rgb.b + ', 0.32)';
   const shadow = '0px 0px 10px ' + rgb8Percent + ', 0px 1px 15px ' + rgb32Percent;
 
   const handleClick = () => {
@@ -54,7 +58,7 @@ const ColorButton = ({ name, rgb, owner }) => {
 
   return (
     <div className={styles.circleWrapper}>
-      {hover && <Tooltip name={name} rgb={rgb} owner={owner} />}
+      {hover && <Tooltip name={color.name} rgb={color.rgb} owner={color.owner} />}
       <div
         className={cn(styles.circle, activeSide && styles.clickedCircle)}
         onMouseEnter={() => setHover(true)}
