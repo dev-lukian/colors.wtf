@@ -18,3 +18,10 @@
   font-weight: 500;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('../public//fonts/inconsolata.regular.ttf');
+  font-weight: 700;
+  font-style: normal;
+}

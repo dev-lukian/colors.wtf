@@ -6,8 +6,6 @@ import ColorScroll from '../components/ColorScroll/ColorScroll';
 
 import { ColorMixContext } from '../context/ColorMixContext';
 
-import { COLORS } from '../constants/constants';
-
 import styles from '../styles/index.module.css';
 
 export default function Home() {

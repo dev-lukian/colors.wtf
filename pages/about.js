@@ -1,3 +1,4 @@
+import cn from "classnames"
 import Head from 'next/head';
 import Image from 'next/image';
 
@@ -17,27 +18,24 @@ export default function About() {
         <h1>about</h1>
         <div className={styles.contentWrapper}>
           <p className={styles.centerAlign}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ipsum elit, posuere ut augue ut, gravida
-            tincidunt neque. Quisque vestibulum dolor nec ligula maximus maximus. Maecenas porta semper lacus vitae
-            faucibus. In hac habitasse platea dictumst. Etiam neque ante, ornare at commodo quis, placerat sed metus.
-            Morbi laoreet urna a odio hendrerit, vel sollicitudin mi blandit.
+            colors.wtf is a unique collection of the 16,777,216 different rgb colors. Every color is mixed from an existing color by a each channel going through the following formula: <span className={cn("code")}>floor((a + b)/2)</span>. A unique name is given to each color by the creater. 
+            Every color is 0.0003 Ξ to mint. A 0.001 Ξ royality is tranfers to each of the parent color owners (a total of 0.002 Ξ) and 0.001 Ξ is sent to the contract wallet.
           </p>
           <h2>the original</h2>
           <div className={styles.colorGridWrapper}>
-            <div className={styles.colorCard} style={{ backgroundColor: 'white' }} />
-            <div className={styles.colorCard} style={{ backgroundColor: 'red' }} />
-            <div className={styles.colorCard} style={{ backgroundColor: 'green' }} />
-            <div className={styles.colorCard} style={{ backgroundColor: 'blue' }} />
-            <div className={styles.colorCard} style={{ backgroundColor: 'black' }} />
+            <div className={styles.colorCard} style={{ backgroundColor: '#ffffff' }} />
+            <div className={styles.colorCard} style={{ backgroundColor: '#ff0000' }} />
+            <div className={styles.colorCard} style={{ backgroundColor: '#00ff00' }} />
+            <div className={styles.colorCard} style={{ backgroundColor: '#0000ff' }} />
+            <div className={styles.colorCard} style={{ backgroundColor: '#000000' }} />
           </div>
           <p className={styles.centerAlign}>
-            Nunc dignissim vel urna quis eleifend. Cras ut arcu ut arcu lacinia tempus. Aliquam semper massa felis, eu
-            tincidunt risus elementum ut. Nam nec tortor augue.
+            The only colors that were provided at the contracts inception were the 5 base colors, the rest are mixed by the community.
           </p>
           <div className={styles.profileCardWrapper}>
             <ProfileCard 
               name="Cameron" 
-              role="Developer" 
+              role="Smart Contract" 
               rgb={
                 {
                   r: 255, 
@@ -56,7 +54,7 @@ export default function About() {
 
             <ProfileCard 
               name="Lukian" 
-              role="Developer" 
+              role="Client" 
               rgb={
                 {
                   r: 0, 
@@ -75,7 +73,7 @@ export default function About() {
 
             <ProfileCard 
               name="Vlad" 
-              role="Developer" 
+              role="Subgraph" 
               rgb={
                 {
                   r: 0, 
