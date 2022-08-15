@@ -6,8 +6,6 @@ import Modal from '../components/Modal/Modal';
 
 import { ModalContext } from '../context/ModalContext';
 
-import { COLORS } from '../constants/constants';
-
 import styles from '../styles/explore.module.css';
 
 

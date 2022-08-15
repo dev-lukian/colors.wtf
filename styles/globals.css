@@ -53,6 +53,12 @@ a {
   border-color: var(--gray-3);
 }
 
+.code { 
+  font-family: Inconsolata;
+  font-weight: 700;
+  color: var(--white);
+}
+
 .select {
   box-shadow: none;
   color: var(--white);
