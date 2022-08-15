@@ -5,7 +5,7 @@ const ColorGrid = ({ colors, ColorButton }) => {
     <div className={styles.colorGridWrapper}>
       {
         colors.map((color, index) => {
-          return <ColorButton key={index} name={color.name} rgb={color.rgb} owner={color.owner} />;
+          return <ColorButton key={index} color={color} />;
         })
       }
     </div>

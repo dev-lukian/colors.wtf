@@ -27,7 +27,7 @@ const ColorProfile = ({color}) => {
           <div className={styles.gridInputSmall}>{rgbToHex(color.rgb.r, color.rgb.g, color.rgb.b)}</div>
         </div>
         <div className={cn(styles.attributeWrapper, styles.gridChild)}>
-          <div className={styles.gridInputSmall}>html</div>
+          <div className={styles.gridInputSmall}>{color.html}</div>
         </div>
         <div className={cn(styles.ownerWrapper, styles.gridChild)}>
           <div className={styles.gridLabel}>Owner</div>
@@ -35,7 +35,7 @@ const ColorProfile = ({color}) => {
         </div>
         <div className={cn(styles.mintedOnWrapper, styles.gridChild)}>
           <div className={styles.gridLabel}>Minted on</div>
-          <div className={styles.gridInputSmall}>10/23/2022</div>
+          <div className={styles.gridInputSmall}>{color.createdAt}</div>
         </div>
       </div>
     </div>

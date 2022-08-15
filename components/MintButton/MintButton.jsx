@@ -18,23 +18,19 @@ const MintButton = ({right, left, mixed}) => {
   
   const onMint = async  () => {
 
-    if (library) {
+    if (library && isValid) {
       const signer = library.getSigner();
-      const contract = new ethers.Contract("0xCD8cB95E5bE5ef3107188bc76dA0f41DA2938967", JSON.stringify(abi), signer);
-
+      const contract = new ethers.Contract("0x3A0106d2dc417b7872659A59FB4f38c048706dbd", JSON.stringify(abi), signer);
       try {
-
-      const tx = await contract.blend(right.rgb.r, right.rgb.g, right.rgb.b, left.rgb.r, left.rgb.g, left.rgb.b, name, {value: ethers.utils.parseEther("0.002")})
-      const rec = await tx.wait();
-      console.log(rec);
+        const tx = await contract.blend(right.rgb.r, right.rgb.g, right.rgb.b, left.rgb.r, left.rgb.g, left.rgb.b, name, {value: ethers.utils.parseEther("0.002")})
+        const rec = await tx.wait();
+        console.log(rec);
       } catch(error) {
         console.log(error);
       }
     } else {
       console.log("Connect wallet");
     }
-
-    
   }
 
   const handleNameChange = (event) => {
@@ -80,12 +76,12 @@ const MintButton = ({right, left, mixed}) => {
       </div>
       <div
         className={cn(styles.buttonWrapper, styles.gridChild)}
-        style={{ backgroundColor: name.length > 0 && mixed && getCssRgb(mixed), cursor: name.length > 0 && mixed ? "pointer" : "not-allowed" }}
+        style={{ backgroundColor: name.length > 0 && mixed && library && getCssRgb(mixed), cursor: (name.length > 0 && mixed && library) ? "pointer" : "not-allowed" }}
         onClick={onMint}
       >
         <div 
           className={styles.gridInputLarge}
-          style={{color: name.length > 0 && mixed ? "var(--white)" : "var(--gray-3)"}}
+          style={{color: name.length > 0 && mixed && library? "var(--white)" : "var(--gray-3)"}}
         >
             mint
         </div>

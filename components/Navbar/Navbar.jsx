@@ -13,36 +13,46 @@ import { providerConfig } from '../../config/providerConfig';
 import { AccountContext } from '../../context/AccountConext';
 import { LibraryContext } from '../../context/LibraryContext';
 
+let web3Modal;
+
 const Navbar = () => {
 
-  let web3Modal;
   // FIXME: Profile image ?
   let profileImg;
-
-  useEffect(() => {
-    web3Modal = new Web3Modal({
-      cacheProvider: true, 
-      providerOptions: providerConfig 
-    });
-  });
 
   const [account, setAccount] = useContext(AccountContext);
   const [library, setLibrary] = useContext(LibraryContext);
 
+  useEffect(() => {
+    web3Modal = new Web3Modal({
+      theme: "dark",
+      cacheProvider: true, 
+      providerOptions: providerConfig 
+    });
+  }, []);
+
   const onConnect = async () => {
 
-    try {
-      const provider = await web3Modal.connect();
-      const library = new ethers.providers.Web3Provider(provider);
-      const accounts = await library.listAccounts();
-      setLibrary(library);
-      if (accounts) { 
-        setAccount(accounts[0]); 
-        profileImg =  await library.getAvatar();
-        console.log(profileImg.url)
+    if (!account) {
+      // if not connected, connect
+      try {
+        const provider = await web3Modal.connect();
+        const library = new ethers.providers.Web3Provider(provider);
+        const accounts = await library.listAccounts();
+        setLibrary(library);
+        if (accounts) { 
+          setAccount(accounts[0]); 
+          profileImg =  await library.getAvatar();
+          console.log(profileImg.url)
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
+    } else {
+      // if connected, disconnect      
+      await web3Modal.clearCachedProvider();
+      setAccount(null);
+      setLibrary(null);
     }
 
   }
