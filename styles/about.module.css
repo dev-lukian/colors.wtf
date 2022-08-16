@@ -2,12 +2,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 8rem);
+  height: calc(100% - 8em);
 }
 
 .centerAlign {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2em;
 }
 
 .contentWrapper {
@@ -20,20 +20,20 @@
 
 .colorCard {
   border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
+  width: 5em;
+  height: 5em;
 }
 
 .profileCardWrapper {
   display: flex;
   flex-direction: row;
-  margin-top: 2rem;
+  margin-top: 2em;
 }
 
 .colorGridWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  column-gap: 2rem;
-  margin-bottom: 2rem;
+  column-gap: 2em;
+  margin-bottom: 2em;
 }

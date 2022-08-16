@@ -2,10 +2,10 @@
   width: 100%;
   height: 100vh;
   position: fixed;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   background-color: var(--black);
   opacity: 80%;
   z-index: 100;
@@ -17,9 +17,9 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 60rem;
-  height: 50rem;
+  width: 60em;
+  height: 50em;
   background-color: var(--black);
   z-index: 101;
-  padding: 5rem;
+  padding: 5em;
 }

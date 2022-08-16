@@ -10,7 +10,10 @@
 }
 
 .gridChild {
-  padding: 1rem;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .gridLabel {
@@ -57,6 +60,8 @@
 
 .noOutline {
   border-width: 0;
+  font-size: var(--font-size-30);
+  padding: 0;
 }
 
 .disabledMint {

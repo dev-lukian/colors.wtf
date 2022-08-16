@@ -10,7 +10,7 @@
 }
 
 .gridChild {
-  padding: 1rem;
+  padding: 1em;
 }
 
 .gridLabel {
@@ -65,15 +65,15 @@
 
 .circle {
   border-radius: 100%;
-  width: 12.5rem;
-  height: 12.5rem;
+  width: 12.5em;
+  height: 12.5em;
   background-color: var(--gray-1);
 }
 
 .bigCircle {
   position: relative;
   z-index: 5;
-  width: 18.75rem;
-  height: 18.75rem;
-  margin-bottom: 2rem;
+  width: 18.75em;
+  height: 18.75em;
+  margin-bottom: 2em;
 }

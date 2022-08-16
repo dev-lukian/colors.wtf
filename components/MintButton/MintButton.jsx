@@ -51,7 +51,7 @@ const MintButton = ({ right, left, mixed }) => {
     <div className={styles.grid}>
       <div className={cn(styles.nameWrapper, styles.gridChild)}>
         <div className={styles.gridLabel}>Name</div>
-        <div className={styles.gridInputLarge}>
+        <div>
           {mixed ? (
             <input
               className={cn('searchInput', styles.noOutline)}
@@ -61,12 +61,12 @@ const MintButton = ({ right, left, mixed }) => {
               required
               id="name"
               role="name"
-              placeholder={`Name rgb${getTextRgb(mixed)}`}
+              //placeholder={`Name rgb${getTextRgb(mixed)}`}
               onChange={handleNameChange}
               style={{ color: isValid || name.length == 0 ? 'var(--white)' : 'var(--warning)' }}
             />
           ) : (
-            '-'
+            <span className={styles.gridInputLarge}>-</span>
           )}
         </div>
       </div>
