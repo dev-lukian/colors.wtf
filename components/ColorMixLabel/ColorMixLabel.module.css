@@ -1,26 +1,28 @@
 .colorMixLabelWrapper {
   position: absolute;
   background-color: var(--gray-3);
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border-radius: 8px;
 }
 
 .left {
-  left: -100%;
+  left: -10em;
+  top: -6em;
 }
 
 .right {
-  right: -100%;
+  right: -10em;
+  top: -6em;
 }
 
 .closeButton {
   border-radius: 50%;
   background-color: var(--gray-2);
-  top: -0.8rem;
-  right: -0.8rem;
+  top: -0.8em;
+  right: -0.8em;
   position: absolute;
-  height: 2rem;
-  width: 2rem;
+  height: 2em;
+  width: 2em;
   cursor: pointer;
   display: flex;
   align-items: center;

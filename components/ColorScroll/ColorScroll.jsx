@@ -1,15 +1,15 @@
-import cn from "classnames";
-import { useState, useEffect } from "react";
-import ColorButton from "../ColorButton/ColorButton";
-import ColorButtonModal from "../ColorButtonModal/ColorButtonModal";
+import cn from 'classnames';
+import { useState, useEffect } from 'react';
+import ColorButton from '../ColorButton/ColorButton';
+import ColorButtonModal from '../ColorButtonModal/ColorButtonModal';
 
-import Close from "../../public/close.svg";
+import Close from '../../public/close.svg';
 
-import ColorGrid from "../ColorGrid/ColorGrid";
-import styles from "./ColorScroll.module.css";
+import ColorGrid from '../ColorGrid/ColorGrid';
+import styles from './ColorScroll.module.css';
 
-import getSearchedColors from "../../services/colorsService";
-import colorSearchQuery from "../../queries/colorQuery";
+import getSearchedColors from '../../services/colorsService';
+import colorSearchQuery from '../../queries/colorQuery';
 
 const FILTER_OPTIONS = [
   <option key="Pink" value="Pink">
@@ -436,13 +436,13 @@ const ColorScroll = ({ modal }) => {
   const [filterOptions, setFilterOptions] = useState(FILTER_OPTIONS);
   const [filterSelected, setFilterSelected] = useState([]);
   const [visableColors, setVisableColors] = useState([]);
-  const [searchOption, setSearchOption] = useState({ value: "name" });
+  const [searchOption, setSearchOption] = useState({ value: 'name' });
   const [serachConfig, setSearchConfig] = useState({
-    type: "text",
-    placeholder: "name",
+    type: 'text',
+    placeholder: 'name',
   });
-  const [search, setSearch] = useState({ value: "" });
-  const [sort, setSort] = useState({ value: "desc" });
+  const [search, setSearch] = useState({ value: '' });
+  const [sort, setSort] = useState({ value: 'desc' });
 
   useEffect(() => {
     let mounted = true;
@@ -471,18 +471,18 @@ const ColorScroll = ({ modal }) => {
   const handleSearchChange = (event) => {
     const searchValue = event.target.value;
 
-    if (searchOption.value == "name") {
+    if (searchOption.value == 'name') {
       // "name" only valid if between 1 and 50 characters
       if (searchValue.length > 50 || searchValue.length < 0) {
         setIsValid(false);
       } else {
         setIsValid(true);
       }
-    } else if (searchOption.value == "rgb") {
+    } else if (searchOption.value == 'rgb') {
       // "rgb" only valid if in the form "0-255 ?, ?0-255 ?, ?0-255 *"
       if (
         !searchValue.match(
-          "^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]) ?, ?([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]) ?, ?([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]) *$"
+          '^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]) ?, ?([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]) ?, ?([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]) *$'
         ) &&
         searchValue.length != 0
       ) {
@@ -490,24 +490,18 @@ const ColorScroll = ({ modal }) => {
       } else {
         setIsValid(true);
       }
-    } else if (searchOption.value == "hex") {
+    } else if (searchOption.value == 'hex') {
       // "hex" only valid if in the form "#?[0-9a-fA-F]{6} *"
-      if (
-        !searchValue.match("^#?[0-9a-fA-F]{6} *$") &&
-        searchValue.length != 0
-      ) {
+      if (!searchValue.match('^#?[0-9a-fA-F]{6} *$') && searchValue.length != 0) {
         setIsValid(false);
       } else {
         setIsValid(true);
       }
-    } else if (searchOption.value == "owner") {
+    } else if (searchOption.value == 'owner') {
       // "owner" only valid if in the form ethereum addres or ens
       // TODO: check if ens regex is correct
       // if((!searchValue.match("^0x[a-fA-F0-9]{40} *$") || !searchValue.match("[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*) *?")) && searchValue.length != 0) {
-      if (
-        !searchValue.match("^0x[a-fA-F0-9]{40} *$") &&
-        searchValue.length != 0
-      ) {
+      if (!searchValue.match('^0x[a-fA-F0-9]{40} *$') && searchValue.length != 0) {
         setIsValid(false);
       } else {
         setIsValid(true);
@@ -521,22 +515,22 @@ const ColorScroll = ({ modal }) => {
     const searchOptionValue = event.target.value;
 
     setSearchOption({ value: searchOptionValue });
-    setSearch({ value: "" });
+    setSearch({ value: '' });
     setIsValid(true);
 
-    if (searchOptionValue == "name") {
-      setSearchConfig({ type: "text", placeholder: "name" });
-    } else if (searchOptionValue == "rgb") {
-      setSearchConfig({ type: "text", placeholder: "r, g, b" });
-    } else if (searchOptionValue == "hex") {
-      setSearchConfig({ type: "text", placeholder: "#ffffff" });
-    } else if (searchOptionValue == "owner") {
+    if (searchOptionValue == 'name') {
+      setSearchConfig({ type: 'text', placeholder: 'name' });
+    } else if (searchOptionValue == 'rgb') {
+      setSearchConfig({ type: 'text', placeholder: 'r, g, b' });
+    } else if (searchOptionValue == 'hex') {
+      setSearchConfig({ type: 'text', placeholder: '#ffffff' });
+    } else if (searchOptionValue == 'owner') {
       setSearchConfig({
-        type: "text",
-        placeholder: "0x8d1bb337E3291f41ff1434F61D6155bBdE63EE58",
+        type: 'text',
+        placeholder: '0x8d1bb337E3291f41ff1434F61D6155bBdE63EE58',
       });
     } else {
-      setSearchConfig({ type: "text", placeholder: "name" });
+      setSearchConfig({ type: 'text', placeholder: 'name' });
     }
   };
 
@@ -580,53 +574,40 @@ const ColorScroll = ({ modal }) => {
   return (
     <div className={styles.scrollWrapper}>
       <div className={styles.searchFilterSortWrapper}>
-        <div className={styles.searchSortWrapper}>
-          <div className={styles.searchWrapper}>
-            <select
-              className={cn("select", styles.noOutline, styles.rightBorder)}
-              name="serachOption"
-              id="serachOption"
-              onChange={handleSearchOptionChange}
-            >
-              <option value="name">name</option>
-              <option value="rgb">rgb</option>
-              <option value="hex">hex</option>
-              <option value="owner">owner</option>
-            </select>
-
-            <input
-              className={cn("searchInput", styles.noOutline)}
-              type={serachConfig.type}
-              autoComplete="off"
-              required
-              id="searchBar"
-              role="searchBar"
-              placeholder={serachConfig.placeholder}
-              onChange={handleSearchChange}
-              style={{
-                color:
-                  isValid || search.length == 0
-                    ? "var(--white)"
-                    : "var(--warning)",
-              }}
-            />
-          </div>
-
+        <div className={styles.searchWrapper}>
           <select
-            className={cn("select")}
-            name="sort"
-            id="sort"
-            onChange={handleSortChange}
+            className={cn('select', styles.noOutline, styles.rightBorder)}
+            name="serachOption"
+            id="serachOption"
+            onChange={handleSearchOptionChange}
           >
+            <option value="name">name</option>
+            <option value="rgb">rgb</option>
+            <option value="hex">hex</option>
+            <option value="owner">owner</option>
+          </select>
+
+          <input
+            className={cn('searchInput', styles.noOutline)}
+            type={serachConfig.type}
+            autoComplete="off"
+            required
+            id="searchBar"
+            role="searchBar"
+            placeholder={serachConfig.placeholder}
+            onChange={handleSearchChange}
+            style={{
+              color: isValid || search.length == 0 ? 'var(--white)' : 'var(--warning)',
+            }}
+          />
+        </div>
+        <div className={styles.selectWrapper}>
+          <select className={cn('select', styles.sortInput)} name="sort" id="sort" onChange={handleSortChange}>
             <option value="desc">newest minted</option>
             <option value="asc">oldest minted</option>
           </select>
-        </div>
-
-        {/* TODO: convert into dropdown */}
-        <div className={styles.filterWrapper}>
           <select
-            className={cn("select", styles.filterSelectWrapper)}
+            className={cn('select', styles.filterSelectWrapper)}
             name="filter"
             id="filter"
             onChange={handleFilterChange}
@@ -638,14 +619,13 @@ const ColorScroll = ({ modal }) => {
               return op;
             })}
           </select>
+        </div>
+        <div className={styles.filterChipsWrapper}>
           {filterSelected.map((op) => {
             return (
               <div key={op} className={styles.filterChip}>
                 {op}
-                <div
-                  onClick={() => handleRemove(op)}
-                  className={styles.closeButton}
-                >
+                <div onClick={() => handleRemove(op)} className={styles.closeButton}>
                   <Close className={styles.closeIcon} />
                 </div>
               </div>
@@ -655,10 +635,7 @@ const ColorScroll = ({ modal }) => {
       </div>
       {isValid ? (
         visableColors.length > 0 ? (
-          <ColorGrid
-            ColorButton={modal ? ColorButtonModal : ColorButton}
-            colors={visableColors}
-          />
+          <ColorGrid ColorButton={modal ? ColorButtonModal : ColorButton} colors={visableColors} />
         ) : (
           <p>No colors found.</p>
         )

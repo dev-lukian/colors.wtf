@@ -10,13 +10,22 @@
 }
 
 .gridChild {
-  padding: 1rem;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .gridLabel {
   text-transform: uppercase;
   color: var(--gray-4);
   font-size: var(--font-size-12);
+}
+
+.nameInput {
+  background-color: transparent;
+  stroke: none;
+  border: none;
 }
 
 .gridInputLarge {
@@ -51,4 +60,11 @@
 
 .noOutline {
   border-width: 0;
+  font-size: var(--font-size-30);
+  padding: 0;
+}
+
+.disabledMint {
+  pointer-events: none;
+  color: var(--gray-2);
 }

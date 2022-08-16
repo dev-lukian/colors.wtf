@@ -4,43 +4,43 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-right: 3rem;
-  padding-left: 3rem;
+  padding-right: 3em;
+  padding-left: 3em;
 }
 
 .circlesWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 3rem;
+  padding-bottom: 3em;
 }
 
 .circle {
   border-radius: 100%;
-  width: 12.5rem;
-  height: 12.5rem;
+  width: 12.5em;
+  height: 12.5em;
   background-color: var(--gray-1);
 }
 
 .bigCircle {
   position: relative;
   z-index: 5;
-  width: 18.75rem;
-  height: 18.75rem;
+  width: 18.75em;
+  height: 18.75em;
   transition: background-color 0.3s ease;
 }
 
 .smallCircle {
   position: relative;
   z-index: 1;
-  bottom: -5rem;
+  bottom: -5em;
   transition: transform 1s ease;
 }
 
 .leftCircleMove {
-  transform: scale(0.75) translate(5rem, -2rem);
+  transform: scale(0.75) translate(5em, -2em);
 }
 
 .rightCircleMove {
-  transform: scale(0.75) translate(-5rem, -2rem);
+  transform: scale(0.75) translate(-5em, -2em);
 }
