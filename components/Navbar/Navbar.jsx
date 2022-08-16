@@ -3,10 +3,10 @@ import cn from 'classnames';
 
 import styles from './Navbar.module.css';
 import { useContext, useEffect } from 'react';
-import { ethers } from "ethers";
-import Web3Modal from "web3modal";
+import { ethers } from 'ethers';
+import Web3Modal from 'web3modal';
 
-import Logo from '../../public/logo.svg'
+import Logo from '../../public/logo.svg';
 
 import { providerConfig } from '../../config/providerConfig';
 
@@ -15,8 +15,10 @@ import { LibraryContext } from '../../context/LibraryContext';
 
 let web3Modal;
 
-const Navbar = () => {
+import WhiteLogo from '../../public/logo-solid.svg';
+import ColorLogo from '../../public/logo-color.svg';
 
+const Navbar = () => {
   // FIXME: Profile image ?
   let profileImg;
 
@@ -25,14 +27,13 @@ const Navbar = () => {
 
   useEffect(() => {
     web3Modal = new Web3Modal({
-      theme: "dark",
-      cacheProvider: true, 
-      providerOptions: providerConfig 
+      theme: 'dark',
+      cacheProvider: true,
+      providerOptions: providerConfig,
     });
   }, []);
 
   const onConnect = async () => {
-
     if (!account) {
       // if not connected, connect
       try {
@@ -40,59 +41,51 @@ const Navbar = () => {
         const library = new ethers.providers.Web3Provider(provider);
         const accounts = await library.listAccounts();
         setLibrary(library);
-        if (accounts) { 
-          setAccount(accounts[0]); 
-          profileImg =  await library.getAvatar();
-          console.log(profileImg.url)
+        if (accounts) {
+          setAccount(accounts[0]);
+          profileImg = await library.getAvatar();
+          console.log(profileImg.url);
         }
       } catch (error) {
         console.log(error);
       }
     } else {
-      // if connected, disconnect      
+      // if connected, disconnect
       await web3Modal.clearCachedProvider();
       setAccount(null);
       setLibrary(null);
     }
-
-  }
-
+  };
 
   return (
     <div className={styles.navbarWrapper}>
       <Link href="/">
-        <Logo style={{cursor: "pointer"}}/>
+        <div className={styles.logoWrapper}>
+          <WhiteLogo className={styles.whiteLogo} />
+          <ColorLogo className={styles.colorLogo} />
+        </div>
       </Link>
       <div className={styles.buttonWrapper}>
-      <Link href="/">
-          <button className={cn('button')}>
-            mint
-          </button>
+        <Link href="/">
+          <button className={cn('button')}>mint</button>
         </Link>
         <Link href="explore">
-          <button className={cn('button')}>
-            explore
-          </button>
+          <button className={cn('button')}>explore</button>
         </Link>
         <Link href="about">
           <button href="about" className={cn('button')}>
             about
           </button>
         </Link>
-        <button 
-          className={cn('button', 'solidButton')}
-          onClick={onConnect}
-        >
-          {
-            account ? ( 
-              <div>
-                <image src={profileImg?.url}/>
-                 {account.substring(0, 4) + '-' + account.substring(40)} 
-              </div>
-              ) : (
-                "connect"
-              )
-          }
+        <button className={cn('button', 'solidButton')} onClick={onConnect}>
+          {account ? (
+            <div>
+              <image src={profileImg?.url} />
+              {account.substring(0, 4) + '-' + account.substring(40)}
+            </div>
+          ) : (
+            'connect'
+          )}
         </button>
       </div>
     </div>
