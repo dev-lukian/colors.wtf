@@ -8,9 +8,7 @@ import { ModalContext } from '../context/ModalContext';
 
 import styles from '../styles/explore.module.css';
 
-
 export default function Explore() {
-
   const [modalColor, setModalColor] = useState(null);
 
   return (
@@ -20,16 +18,12 @@ export default function Explore() {
         <meta name="description" content="explore colors.wtf" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <ModalContext.Provider
-        value={[modalColor, setModalColor]}
-      >
+      <ModalContext.Provider value={[modalColor, setModalColor]}>
         <div className={styles.exploreWrapper}>
-        { modalColor ? <Modal/> : null }
-        <h1>explore</h1>
-        <ColorScroll modal={true}/>
+          {modalColor ? <Modal /> : null}
+          <ColorScroll modal={true} />
         </div>
       </ModalContext.Provider>
-
     </>
   );
 }

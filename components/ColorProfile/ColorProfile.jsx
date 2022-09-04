@@ -5,14 +5,10 @@ import styles from './ColorProfile.module.css';
 
 import { getCssRgb, getTextRgb, rgbToHex } from '../../util/colorConversion';
 
-const ColorProfile = ({color}) => {
-  
+const ColorProfile = ({ color }) => {
   return (
     <div className={styles.profileWrapper}>
-      <div
-        className={cn(styles.circle, styles.bigCircle)}
-        style={{ backgroundColor: getCssRgb(color.rgb) }}
-      />
+      <div className={cn(styles.circle, styles.bigCircle)} style={{ backgroundColor: getCssRgb(color.rgb) }} />
       <div className={styles.grid}>
         <div className={cn(styles.nameWrapper, styles.gridChild)}>
           <div className={styles.gridLabel}>Name</div>
@@ -27,15 +23,16 @@ const ColorProfile = ({color}) => {
           <div className={styles.gridInputSmall}>{rgbToHex(color.rgb.r, color.rgb.g, color.rgb.b)}</div>
         </div>
         <div className={cn(styles.attributeWrapper, styles.gridChild)}>
+          <div className={styles.gridLabel}>Color Group</div>
           <div className={styles.gridInputSmall}>{color.html}</div>
         </div>
         <div className={cn(styles.ownerWrapper, styles.gridChild)}>
           <div className={styles.gridLabel}>Owner</div>
-            <div className={styles.gridInputSmall}>{color.owner}</div>
+          <div className={styles.gridInputXSmall}>{color.owner}</div>
         </div>
         <div className={cn(styles.mintedOnWrapper, styles.gridChild)}>
           <div className={styles.gridLabel}>Minted on</div>
-          <div className={styles.gridInputSmall}>{color.createdAt}</div>
+          <div className={styles.gridInputXSmall}>{new Date(color.createdAt * 1000).toLocaleDateString()}</div>
         </div>
       </div>
     </div>

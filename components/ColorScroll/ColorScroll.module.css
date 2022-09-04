@@ -4,12 +4,13 @@
   height: 100%;
   padding: 0em 3em 3em 3em;
   border-radius: 18px 18px 0px 0px;
-  overflow-y: auto;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 /*width*/
 .scrollWrapper::-webkit-scrollbar {
-  width: 16px;
+  width: 1em;
 }
 
 /*track*/

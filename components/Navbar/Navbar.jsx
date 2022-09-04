@@ -2,7 +2,7 @@ import Link from 'next/link';
 import cn from 'classnames';
 
 import styles from './Navbar.module.css';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import Web3Modal from 'web3modal';
 
@@ -57,25 +57,35 @@ const Navbar = () => {
     }
   };
 
+  const activeLinkCheck = (link) => {
+    if (typeof window !== 'undefined') {
+      if (link === window.location.pathname) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  };
+
   return (
     <div className={styles.navbarWrapper}>
-      <Link href="/">
-        <div className={styles.logoWrapper}>
+      <Link href="/" passHref>
+        <a className={styles.logoWrapper}>
           <WhiteLogo className={styles.whiteLogo} />
           <ColorLogo className={styles.colorLogo} />
-        </div>
+        </a>
       </Link>
       <div className={styles.buttonWrapper}>
         <Link href="/">
-          <button className={cn('button')}>mint</button>
+          <a className={cn('button', activeLinkCheck('/') && styles.activeLink)}>mint</a>
         </Link>
-        <Link href="explore">
-          <button className={cn('button')}>explore</button>
+        <Link href="/explore">
+          <a className={cn('button', activeLinkCheck('/explore') && styles.activeLink)}>explore</a>
         </Link>
-        <Link href="about">
-          <button href="about" className={cn('button')}>
-            about
-          </button>
+        <Link href="/about">
+          <a className={cn('button', activeLinkCheck('/about') && styles.activeLink)}>about</a>
         </Link>
         <button className={cn('button', 'solidButton')} onClick={onConnect}>
           {account ? (
