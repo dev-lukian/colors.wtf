@@ -3,37 +3,109 @@
   display: flex;
   flex-direction: column;
   height: calc(100% - 8em);
+  overflow-y: hidden;
 }
 
-.centerAlign {
-  text-align: center;
-  margin-bottom: 2em;
+.aboutScroll {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/*width*/
+.aboutScroll::-webkit-scrollbar {
+  width: 1em;
+}
+
+/*track*/
+.aboutScroll::-webkit-scrollbar-track {
+  background: var(--gray-1);
+}
+
+/*thumb*/
+.aboutScroll::-webkit-scrollbar-thumb {
+  background: var(--gray-2);
+  border-radius: 18px;
+}
+
+/*thumb hover*/
+.aboutScroll::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-3);
 }
 
 .contentWrapper {
+  width: 100%;
+  padding: 3em;
+  font-size: var(--font-size-30);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 60%;
-  align-self: center;
+  row-gap: 2em;
+  max-width: 1000px;
+  margin: auto;
 }
 
-.colorCard {
-  border-radius: 50%;
-  width: 5em;
-  height: 5em;
-}
-
-.profileCardWrapper {
-  display: flex;
-  flex-direction: row;
-  margin-top: 2em;
+.contentBlock {
+  width: 100%;
 }
 
 .colorGridWrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  column-gap: 2em;
-  margin-bottom: 2em;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+  padding: 0em 1em;
+}
+
+.colorCard {
+  border-radius: 100%;
+  height: 20em;
+  height: 20em;
+  position: relative;
+}
+
+.colorCard:hover .colorHover {
+  opacity: 100%;
+}
+
+.colorHover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-15);
+  opacity: 0%;
+  transition: 0.3s ease opacity;
+}
+
+.whiteHover {
+  color: black;
+}
+
+.finalWords {
+  font-size: var(--font-size-50);
+  text-align: center;
+  margin: 3em;
+}
+
+.createdBy {
+  font-size: var(--font-size-20);
+}
+
+.creatorsWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  margin: 0em 3em 3em 3em;
+}
+
+.profileCardsWrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 3em;
 }

@@ -19,8 +19,6 @@ export default function Home() {
   // Move Provider to child?
   // https://kentcdodds.com/blog/how-to-optimize-your-context-value
 
-  console.log('hi');
-
   // TODO: look into if this is needed
   // const providerValue = useMemo(() => ({
   //   right, setRight,

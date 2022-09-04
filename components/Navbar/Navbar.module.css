@@ -38,6 +38,11 @@
   column-gap: 1em;
 }
 
+.activeLink {
+  background-color: var(--gray-3);
+  border-color: var(--gray-3);
+}
+
 @keyframes logoMove {
   0% {
     transform: translateX(-0.4em);
@@ -53,5 +58,11 @@
   }
   100% {
     transform: rotateY(28deg);
+  }
+}
+
+@media (min-width: 1600px) {
+  .navbarWrapper {
+    padding: 0rem;
   }
 }
