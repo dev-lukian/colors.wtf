@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import cn from 'classnames';
 import styles from './ColorProfile.module.css';
@@ -6,9 +6,31 @@ import styles from './ColorProfile.module.css';
 import { getCssRgb, getTextRgb, rgbToHex } from '../../util/colorConversion';
 
 const ColorProfile = ({ color }) => {
+  const [animationStep, setAnimationStep] = useState(0);
+
+  useEffect(() => {
+    setAnimationStep(1);
+    setTimeout(() => {
+      setAnimationStep(2);
+    }, 900);
+  }, [color]);
+
   return (
     <div className={styles.profileWrapper}>
-      <div className={cn(styles.circle, styles.bigCircle)} style={{ backgroundColor: getCssRgb(color.rgb) }} />
+      <div className={styles.circlesWrapper}>
+        <div
+          className={cn(styles.circle, styles.smallCircle, animationStep >= 1 && styles.leftCircleMove)}
+          style={{ backgroundColor: getCssRgb(color.rgb) }}
+        />
+        <div
+          className={cn(styles.circle, styles.bigCircle)}
+          style={{ backgroundColor: animationStep == 2 ? getCssRgb(color.rgb) : styles.circle.backgroundColor }}
+        />
+        <div
+          className={cn(styles.circle, styles.smallCircle, animationStep >= 1 && styles.rightCircleMove)}
+          style={{ backgroundColor: getCssRgb(color.rgb) }}
+        />
+      </div>
       <div className={styles.grid}>
         <div className={cn(styles.nameWrapper, styles.gridChild)}>
           <div className={styles.gridLabel}>Name</div>
