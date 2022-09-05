@@ -70,6 +70,13 @@
   grid-area: 4 / 4 / 5 / 5;
 }
 
+.circlesWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3em;
+}
+
 .circle {
   border-radius: 100%;
   width: 12.5em;
@@ -83,4 +90,20 @@
   width: 18.75em;
   height: 18.75em;
   margin-bottom: 2em;
+  transition: background-color 0.3s ease;
+}
+
+.smallCircle {
+  position: relative;
+  z-index: 1;
+  bottom: -5em;
+  transition: transform 1s ease;
+}
+
+.leftCircleMove {
+  transform: scale(0.75) translate(7em, -2em);
+}
+
+.rightCircleMove {
+  transform: scale(0.75) translate(-7em, -2em);
 }

@@ -4,6 +4,7 @@ import styles from './ColorButton.module.css';
 
 import Tooltip from '../Tooltip/Tooltip';
 import { ColorMixContext } from '../../context/ColorMixContext';
+import { ToastContext } from '../../context/ToastContext';
 
 import { contractRgbToClientRgb } from '../../util/colorConversion';
 
@@ -12,6 +13,10 @@ import isEqual from 'lodash.isequal';
 const ColorButton = ({ color }) => {
   const [hover, setHover] = useState(false);
   const [activeSide, setActiveSide] = useState(null);
+
+  const { showToastContext, toastDetailsContext } = useContext(ToastContext);
+  const [showToast, setShowToast] = showToastContext;
+  const [toastDetails, setToastDetails] = toastDetailsContext;
 
   const { leftContext, rightContext, leftAnimationContext, rightAnimationContext } = useContext(ColorMixContext);
   const [left, setLeft] = leftContext;
@@ -26,10 +31,11 @@ const ColorButton = ({ color }) => {
     owner: color.owner.id,
   };
 
-
   const cssRGB = 'rgba(' + colorFormatted.rgb.r + ', ' + colorFormatted.rgb.g + ', ' + colorFormatted.rgb.b + ', 1)';
-  const rgb8Percent = 'rgba(' + colorFormatted.rgb.r + ', ' + colorFormatted.rgb.g + ', ' + colorFormatted.rgb.b + ', 0.08)';
-  const rgb32Percent = 'rgba(' + colorFormatted.rgb.r + ', ' + colorFormatted.rgb.g + ', ' + colorFormatted.rgb.b + ', 0.32)';
+  const rgb8Percent =
+    'rgba(' + colorFormatted.rgb.r + ', ' + colorFormatted.rgb.g + ', ' + colorFormatted.rgb.b + ', 0.08)';
+  const rgb32Percent =
+    'rgba(' + colorFormatted.rgb.r + ', ' + colorFormatted.rgb.g + ', ' + colorFormatted.rgb.b + ', 0.32)';
   const shadow = '0px 0px 10px ' + rgb8Percent + ', 0px 1px 15px ' + rgb32Percent;
 
   const handleClick = () => {
@@ -64,7 +70,7 @@ const ColorButton = ({ color }) => {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={handleClick}
-        style={{ backgroundColor: cssRGB, boxShadow: hover ? shadow : "none" }}
+        style={{ backgroundColor: cssRGB, boxShadow: hover ? shadow : 'none' }}
       >
         {activeSide && <div className={styles.clickedIndicator}>{activeSide}</div>}
       </div>
