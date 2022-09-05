@@ -1,0 +1,36 @@
+.toastContainer {
+  max-width: 1600px;
+  width: 100%;
+  position: fixed;
+  bottom: 1em;
+  left: auto;
+  right: auto;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  transform: translateY(7em);
+  transition: transform 0.3s ease;
+}
+
+.showToast {
+  transform: translateY(0em);
+}
+
+.toastWrapper {
+  margin-left: 3em;
+  position: relative;
+  width: auto;
+  height: 3em;
+  border-radius: 18px;
+  padding: 0.4em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1em;
+  background-color: var(--gray-2);
+  font-size: var(--font-size-20);
+}
+
+.lottie {
+  height: 80%;
+}
