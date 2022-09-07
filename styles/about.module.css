@@ -19,7 +19,7 @@
 
 /*track*/
 .aboutScroll::-webkit-scrollbar-track {
-  background: var(--gray-1);
+  background: transparent;
 }
 
 /*thumb*/
@@ -59,8 +59,8 @@
 
 .colorCard {
   border-radius: 100%;
-  height: 20em;
-  height: 20em;
+  height: 15em;
+  width: 15em;
   position: relative;
 }
 

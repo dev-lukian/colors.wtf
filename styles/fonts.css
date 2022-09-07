@@ -25,3 +25,10 @@
   font-weight: 700;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../public/fonts/Inter-ExtraBold.woff2');
+  font-weight: 800;
+  font-style: normal;
+}

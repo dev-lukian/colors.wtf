@@ -10,27 +10,13 @@ import LinkedinIcon from '../../public/linkedin-icon.svg';
 
 const ProfileCard = ({ name, role, rgb, socials }) => {
   return (
-    // <div className={styles.profileCardWrapper}>
-    //   <div className={styles.bigCircleCard}style={{backgroundColor: getCssRgb(rgb)}} />
-    //     <p>{name}</p>
-    //     <p>{getTextRgb(rgb)}</p>
-    //     <p>{role}</p>
-    //     <div className={styles.socialsWrapper}>
-    //       <a target="_blank" className={styles.socialIconWrapper} href={socials.instagram} rel="noopener noreferrer">
-    //         <InstagramIcon/>
-    //       </a>
-    //       <a target="_blank" className={styles.socialIconWrapper} href={socials.twitter} rel="noopener noreferrer">
-    //         <TwitterIcon/>
-    //       </a>
-    //       <a target="_blank" className={styles.socialIconWrapper} href={socials.linkedin} rel="noopener noreferrer">
-    //         <LinkedinIcon/>
-    //       </a>
-    //     </div>
-    // </div>
     <div className={styles.grid}>
       <div className={cn(styles.nameWrapper, styles.gridChild)}>
-        <div className={styles.gridLabel}>Name</div>
-        <div className={styles.gridInputLarge}>{name}</div>
+        <div>
+          <div className={styles.gridLabel}>Name</div>
+          <div className={styles.gridInputLarge}>{name}</div>
+        </div>
+        <div className={styles.colorCard} style={{background: getCssRgb(rgb)}}/>
       </div>
       <div className={cn(styles.rgbWrapper, styles.gridChild)}>
         <div className={styles.gridLabel}>RGB</div>

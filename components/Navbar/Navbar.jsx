@@ -71,12 +71,17 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbarWrapper}>
+      <div>
       <Link href="/" passHref>
         <a className={styles.logoWrapper}>
           <WhiteLogo className={styles.whiteLogo} />
           <ColorLogo className={styles.colorLogo} />
         </a>
       </Link>
+      <div>
+        BETA
+      </div>
+      </div>
       <div className={styles.buttonWrapper}>
         <Link href="/">
           <a className={cn('button', activeLinkCheck('/') && styles.activeLink)}>mint</a>

@@ -39,8 +39,17 @@ const ColorButton = ({ color }) => {
   const shadow = '0px 0px 10px ' + rgb8Percent + ', 0px 1px 15px ' + rgb32Percent;
 
   const handleClick = () => {
-    if (isEqual(colorFormatted, left) || isEqual(colorFormatted, right)) return;
-
+    if (isEqual(colorFormatted, left)) { 
+      setLeft(null);
+      setActiveSide(null);
+      return;
+    } 
+    
+    if (isEqual(colorFormatted, right)){ 
+      setRight(null);
+      setActiveSide(null);
+      return;
+    }
     if (right == null && left == null) {
       setLeft(colorFormatted);
       setLeftAnimationInProgress(true);
@@ -66,9 +75,9 @@ const ColorButton = ({ color }) => {
     <div className={styles.circleWrapper}>
       {hover && <Tooltip name={colorFormatted.name} rgb={colorFormatted.rgb} owner={colorFormatted.owner} />}
       <div
-        className={cn(styles.circle, activeSide && styles.clickedCircle)}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        className={styles.circle}
+        onMouseEnter={() =>  setHover(true)}
+        onMouseLeave={() =>  setHover(false)}
         onClick={handleClick}
         style={{ backgroundColor: cssRGB, boxShadow: hover ? shadow : 'none' }}
       >

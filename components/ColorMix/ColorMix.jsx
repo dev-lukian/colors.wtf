@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import styles from './ColorMix.module.css';
 
 import { ColorMixContext } from '../../context/ColorMixContext';
-import { getCssRgb } from '../../util/colorConversion';
+import { getCssRgb, getTextRgb } from '../../util/colorConversion';
 
 import ColorMixLabel from '../ColorMixLabel/ColorMixLabel';
 import MintButton from '../MintButton/MintButton';
@@ -46,9 +46,13 @@ const ColorMix = () => {
           )}
         </div>
         <div
-          className={cn(styles.circle, styles.bigCircle)}
+          className={styles.preview}
           style={{ backgroundColor: mixed ? getCssRgb(mixed) : styles.circle.backgroundColor }}
-        ></div>
+        >
+          <div className={styles.previewText}>
+            {mixed ? getTextRgb(mixed) : ""}
+          </div>
+        </div>
         <div
           className={cn(styles.circle, styles.smallCircle, right && styles.rightCircleMove)}
           style={{ backgroundColor: right ? getCssRgb(right.rgb) : styles.circle.backgroundColor }}

@@ -18,14 +18,14 @@ export default function About() {
         <div className={styles.aboutScroll}>
           <div className={styles.contentWrapper}>
             <div className={styles.contentBlock}>
-              Colors.wtf is a unique collection of the 16,777,216 possible different colors. Every color is created by
-              mixing 2 existing colors in the collection. existing color by each channel going through the following
+              colors.wtf is a unique collection of the 16,777,216 possible rgb colors. Every color is created by
+              mixing 2 existing colors in the collection with each channel going through the following
               formula:
             </div>
             <div className={cn('code')}>floor((a + b)/2)</div>
             <div className={styles.contentBlock}>
               A unique name is given to each color by the creator. Every color is 0.003 Ξ to mint. A 0.001 Ξ royality is
-              tranfers to each of the parent color owners (a total of 0.002 Ξ) and 0.001 Ξ is sent to the contract
+              tranfered to each of the parent color owners (a total of 0.002 Ξ) and 0.001 Ξ is sent to the contract
               wallet. The colors.wtf contract address is
             </div>
             <a
@@ -38,7 +38,7 @@ export default function About() {
             </a>
             <div className={styles.contentBlock}>
               The only colors that were provided at the contracts inception were the 8 base colors, the rest are mixed
-              by the community. Here are the starting 8.
+              by the community.
             </div>
           </div>
           <div className={styles.colorGridWrapper}>
@@ -101,7 +101,7 @@ export default function About() {
           </div>
           <div className={styles.finalWords}>Have fun mixing!</div>
           <div className={styles.creatorsWrapper}>
-            <div className={styles.createdBy}>Cheers,</div>
+            <div className={styles.createdBy}>colors.wtf team,</div>
             <div className={styles.profileCardsWrapper}>
               <ProfileCard
                 name="Cameron"
