@@ -1,0 +1,111 @@
+.aboutWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 8em);
+  overflow-y: hidden;
+}
+
+.aboutScroll {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/*width*/
+.aboutScroll::-webkit-scrollbar {
+  width: 1em;
+}
+
+/*track*/
+.aboutScroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/*thumb*/
+.aboutScroll::-webkit-scrollbar-thumb {
+  background: var(--gray-2);
+  border-radius: 18px;
+}
+
+/*thumb hover*/
+.aboutScroll::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-3);
+}
+
+.contentWrapper {
+  width: 100%;
+  padding: 3em;
+  font-size: var(--font-size-30);
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.contentBlock {
+  width: 100%;
+}
+
+.colorGridWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+  padding: 0em 1em;
+}
+
+.colorCard {
+  border-radius: 100%;
+  height: 15em;
+  width: 15em;
+  position: relative;
+}
+
+.colorCard:hover .colorHover {
+  opacity: 100%;
+}
+
+.colorHover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-15);
+  opacity: 0%;
+  transition: 0.3s ease opacity;
+}
+
+.whiteHover {
+  color: black;
+}
+
+.finalWords {
+  font-size: var(--font-size-50);
+  text-align: center;
+  margin: 3em;
+}
+
+.createdBy {
+  font-size: var(--font-size-20);
+}
+
+.creatorsWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  margin: 0em 3em 3em 3em;
+}
+
+.profileCardsWrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 3em;
+}

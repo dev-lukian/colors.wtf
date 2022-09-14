@@ -1,0 +1,7 @@
+.colorGridWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2em 2em;
+}

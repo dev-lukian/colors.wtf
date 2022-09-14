@@ -1,0 +1,115 @@
+.scrollWrapper {
+  background-color: var(--gray-1);
+  width: 100%;
+  height: 100%;
+  padding: 0em 3em 3em 3em;
+  border-radius: 18px 18px 0px 0px;
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+
+/*width*/
+.scrollWrapper::-webkit-scrollbar {
+  width: 1em;
+}
+
+/*track*/
+.scrollWrapper::-webkit-scrollbar-track {
+  background: var(--gray-1);
+}
+
+/*thumb*/
+.scrollWrapper::-webkit-scrollbar-thumb {
+  background: var(--gray-2);
+  border-radius: 18px;
+}
+
+/*thumb hover*/
+.scrollWrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-3);
+}
+
+.searchFilterSortWrapper {
+  padding-top: 3em;
+  margin-bottom: 1em;
+  top: 0;
+  z-index: 5;
+  position: sticky;
+  background-color: var(--gray-1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.searchWrapper {
+  display: flex;
+  flex-direction: row;
+  border-color: var(--gray-3);
+  border-radius: 8px;
+  border: 2px solid var(--gray-3);
+  width: 100%;
+}
+
+.selectWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.sortInput {
+  width: 50%;
+}
+
+.filterSelectWrapper {
+  width: 50%;
+}
+
+.filterChipsWrapper {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.filterChip {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--gray-2);
+  border-radius: 8em;
+  padding: 0.5em 1em;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.closeButton {
+  border-radius: 50%;
+  background-color: var(--gray-3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-left: 0.5em;
+  padding: 2px;
+}
+
+.closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.5);
+}
+
+.closeButton:hover {
+  background-color: var(--gray-4);
+}
+
+.noOutline {
+  border-width: 0;
+}
+
+.rightBorder {
+  border-radius: 0px;
+  border-right: 2px solid var(--gray-3);
+  font-size: var(--font-size-12);
+}

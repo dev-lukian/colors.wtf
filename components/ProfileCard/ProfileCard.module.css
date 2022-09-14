@@ -1,0 +1,97 @@
+.socialsIconsWrapper {
+  margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-flow: row;
+  border: 3px solid var(--gray-1);
+  border-radius: 18px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gridChild {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gridLabel {
+  text-transform: uppercase;
+  color: var(--gray-4);
+  font-size: var(--font-size-15);
+}
+
+.gridInputLarge {
+  font-size: var(--font-size-30);
+}
+
+.gridInputSmall {
+  font-size: var(--font-size-20);
+}
+
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nameWrapper {
+  grid-area: 1 / 1 / 2 / 7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--gray-1);
+}
+
+.colorCard {
+  border-radius: 100%;
+  height: 2em;
+  width: 2em;
+}
+
+.rgbWrapper {
+  grid-area: 2 / 1 / 3 / 4;
+  border-right: 3px solid var(--gray-1);
+  border-bottom: 3px solid var(--gray-1);
+}
+
+.roleWrapper {
+  grid-area: 2 / 4 / 3 / 7;
+  border-bottom: 3px solid var(--gray-1);
+}
+
+.linkedinWrapper {
+  border-right: 3px solid var(--gray-1);
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+.twitterWrapper {
+  border-right: 3px solid var(--gray-1);
+  grid-area: 3 / 3 / 4 / 5;
+}
+
+.instagramWrapper {
+  grid-area: 3 / 5 / 4 / 7;
+}
+
+.socialWrapper {
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socialWrapper:hover {
+  background-color: var(--gray-1);
+  color: white;
+}

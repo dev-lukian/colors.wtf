@@ -1,0 +1,42 @@
+.colorMixLabelWrapper {
+  position: absolute;
+  background-color: var(--gray-3);
+  padding: 0.5em 1em;
+  border-radius: 8px;
+}
+
+.left {
+  left: -5.5em;
+  top: -7em;
+}
+
+.right {
+  right: -5.5em;
+  top: -7em;
+}
+
+.closeButton {
+  border-radius: 50%;
+  background-color: var(--gray-2);
+  top: -0.8em;
+  right: -0.8em;
+  position: absolute;
+  height: 2em;
+  width: 2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+  background-color: var(--gray-4);
+}
+
+.closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.9);
+}
