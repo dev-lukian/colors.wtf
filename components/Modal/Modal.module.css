@@ -19,11 +19,14 @@
   transform: translate(-50%, -50%);
   width: 70em;
   height: auto;
+  max-height: 90vh;
   background-color: var(--black);
   z-index: 101;
   padding: 5em;
   border: 3px solid var(--gray-1);
   border-radius: 18px;
+  font-size: 0.8em;
+  overflow-y: auto;
 }
 
 .closeButton {
@@ -43,4 +46,25 @@
 
 .closeButton:hover {
   background-color: var(--gray-4);
+}
+
+/*width*/
+.modalWrapper::-webkit-scrollbar {
+  width: 1em;
+}
+
+/*track*/
+.modalWrapper::-webkit-scrollbar-track {
+  background: var(--gray-1);
+}
+
+/*thumb*/
+.modalWrapper::-webkit-scrollbar-thumb {
+  background: var(--gray-2);
+  border-radius: 18px;
+}
+
+/*thumb hover*/
+.modalWrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-3);
 }
