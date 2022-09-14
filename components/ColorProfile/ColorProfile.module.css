@@ -100,7 +100,7 @@
 }
 
 .previewText {
-  font-size: 2.75em;
+  font-size: 2.25em;
   font-weight: 800;
   text-shadow: 0.5px 0.5px 0 var(--black), -0.5px -0.5px 0 var(--black), 0.5px -0.5px 0 var(--black), -0.5px 0.5px 0 var(--black), 0.5px 0.5px 0 var(--black);
 }
@@ -110,6 +110,7 @@
   z-index: 1;
   bottom: -4em;
   transition: transform 1s ease;
+  cursor: pointer;
 }
 
 .leftCircleMove {
