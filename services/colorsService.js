@@ -1,6 +1,6 @@
-export default async function querySubgraph(query) {
+export default async function getSearchedColors(query) {
   const data = await fetch(
-    "https://api.thegraph.com/subgraphs/name/cameron-morrongiello/colors-wtf-dev-goerli",
+    "https://api.thegraph.com/subgraphs/name/cameron-morrongiello/colors-wtf-subgraph-dev-v1",
     {
       method: "POST",
       headers: {

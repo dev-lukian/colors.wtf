@@ -3,15 +3,10 @@ import { useContext, useEffect, useState } from 'react';
 import cn from 'classnames';
 import styles from './ColorProfile.module.css';
 
-import { getCssRgb, getTextRgb, rgbToHex, contractRgbToClientRgb } from '../../util/colorConversion';
-
-import querySubgraph from '../../services/colorsService';
-import { parentsQuery } from '../../queries/colorQuery';
+import { getCssRgb, getTextRgb, rgbToHex } from '../../util/colorConversion';
 
 const ColorProfile = ({ color }) => {
   const [animationStep, setAnimationStep] = useState(0);
-  const [parent1, setParent1] = useState();
-  const [parent2, setParent2] = useState();
 
   useEffect(() => {
     setAnimationStep(1);
@@ -20,44 +15,20 @@ const ColorProfile = ({ color }) => {
     }, 900);
   }, [color]);
 
-  useEffect(() => {
-    let mounted = true;
-    if (mounted) {
-      querySubgraph(parentsQuery(color.parent1Id, color.parent2Id)).then((data) => {
-        console.log(data)
-        if(data.data.parent1.length == 1) {
-          setParent1(data.data.parent1[0]);
-        } else {
-          setParent1(null);
-        }
-        if(data.data.parent2.length == 1) {
-          setParent2(data.data.parent2[0]);
-        } else {
-          setParent2(null);
-        }
-      });
-    }
-    return () => (mounted = false);
-  },[]);
-
   return (
     <div className={styles.profileWrapper}>
       <div className={styles.circlesWrapper}>
         <div
           className={cn(styles.circle, styles.smallCircle, animationStep >= 1 && styles.leftCircleMove)}
-          style={{ backgroundColor: parent1 && getCssRgb(contractRgbToClientRgb(parent1.rgb)) }}
+          style={{ backgroundColor: getCssRgb(color.rgb) }}
         />
         <div
-          className={cn(styles.circle, styles.preview)}
+          className={cn(styles.circle, styles.bigCircle)}
           style={{ backgroundColor: animationStep == 2 ? getCssRgb(color.rgb) : styles.circle.backgroundColor }}
-        > 
-          <div className={styles.previewText}>
-            {getTextRgb(color.rgb)}
-          </div>
-        </div>
+        />
         <div
           className={cn(styles.circle, styles.smallCircle, animationStep >= 1 && styles.rightCircleMove)}
-          style={{ backgroundColor: parent2 && getCssRgb(contractRgbToClientRgb(parent2.rgb)) }}
+          style={{ backgroundColor: getCssRgb(color.rgb) }}
         />
       </div>
       <div className={styles.grid}>

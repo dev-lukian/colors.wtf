@@ -1,4 +1,4 @@
-export function colorSearchQuery(limit = 100, direction, where) {
+export default function colorSearchQuery(limit = 100, direction, where) {
   const limitStr = `first: ${limit},`;
   const sortStr = `orderBy: createdAt, orderDirection: ${direction},`;
   let whereStr;
@@ -18,32 +18,6 @@ export function colorSearchQuery(limit = 100, direction, where) {
 
   return `{
       tokens(${limitStr} ${sortStr} ${whereStr}) {
-        rgb 
-        name
-        html
-        createdAt
-        parent1Id
-        parent2Id 
-        owner { 
-          id
-        }
-      }
-    }`;
-}
-
-export function parentsQuery(parent1Id, parent2Id) {
-
-  return `{
-      parent1: tokens(where: {id: "${parent1Id}"}) {
-        rgb 
-        name
-        html
-        createdAt 
-        owner { 
-          id
-        }
-      }
-      parent2: tokens(where: {id: "${parent2Id}"}) {
         rgb 
         name
         html

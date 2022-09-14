@@ -78,44 +78,32 @@
 }
 
 .circle {
-  border-radius: 8px;
+  border-radius: 100%;
   width: 12.5em;
   height: 12.5em;
   background-color: var(--gray-1);
 }
 
-.preview {
+.bigCircle {
   position: relative;
-  border-radius: 8px;
   z-index: 5;
   width: 18.75em;
   height: 18.75em;
-  margin: 0 0.25rem 0 0.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--gray-1);
+  margin-bottom: 2em;
   transition: background-color 0.3s ease;
-}
-
-.previewText {
-  font-size: 2.35rem;
-  font-weight: 800;
-  text-shadow: 0.5px 0.5px 0 var(--black), -0.5px -0.5px 0 var(--black), 0.5px -0.5px 0 var(--black), -0.5px 0.5px 0 var(--black), 0.5px 0.5px 0 var(--black);
 }
 
 .smallCircle {
   position: relative;
   z-index: 1;
-  bottom: -4em;
+  bottom: -5em;
   transition: transform 1s ease;
 }
 
 .leftCircleMove {
-  transform: scale(0.75) translate(4em, -2em);
+  transform: scale(0.75) translate(7em, -2em);
 }
 
 .rightCircleMove {
-  transform: scale(0.75) translate(-4em, -2em);
+  transform: scale(0.75) translate(-7em, -2em);
 }

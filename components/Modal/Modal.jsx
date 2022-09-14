@@ -12,7 +12,7 @@ const Modal = () => {
 
   return (
     <>
-      <div className={styles.modalWrapper}>
+      <div className={styles.modalWrapper} onClick={() => console.log('modal')}>
         <ColorProfile color={modalColor} />
         <div className={styles.closeButton} onClick={() => setModalColor(null)}>
           <Close className={styles.closeIcon} />

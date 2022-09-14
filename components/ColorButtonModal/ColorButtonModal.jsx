@@ -22,9 +22,7 @@ const ColorButtonModal = ({ color }) => {
     rgb: contractRgbToClientRgb(color.rgb),
     owner: color.owner.id,
     html: color.html,
-    createdAt: color.createdAt,
-    parent1Id: color.parent1Id,
-    parent2Id: color.parent2Id
+    createdAt: color.createdAt
   };
 
   const cssRGB = 'rgba(' + colorFormatted.rgb.r + ', ' + colorFormatted.rgb.g + ', ' + colorFormatted.rgb.b + ', 1)';

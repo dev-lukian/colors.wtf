@@ -18,8 +18,7 @@ const MintButton = ({ right, left, mixed }) => {
   const onMint = async () => {
     if (library && isValid) {
       const signer = library.getSigner();
-      // colors.wtf Goerli Testnest Contract
-      const contract = new ethers.Contract('0x64a5344cE09340688D59CdE552bf93AeF9F77a45', JSON.stringify(abi), signer);
+      const contract = new ethers.Contract('0x3A0106d2dc417b7872659A59FB4f38c048706dbd', JSON.stringify(abi), signer);
       try {
         const tx = await contract.blend(
           right.rgb.r,
@@ -29,7 +28,7 @@ const MintButton = ({ right, left, mixed }) => {
           left.rgb.g,
           left.rgb.b,
           name,
-          { value: ethers.utils.parseEther('0.003') }
+          { value: ethers.utils.parseEther('0.002') }
         );
         const rec = await tx.wait();
         console.log(rec);
@@ -44,7 +43,7 @@ const MintButton = ({ right, left, mixed }) => {
   const handleNameChange = (event) => {
     const nameValue = event.target.value;
     // TODO: change max length reqirement
-    !(nameValue.length > 0 && nameValue.length < 31) ? setIsValid(false) : setIsValid(true);
+    !(nameValue.length > 0 && nameValue.length < 100) ? setIsValid(false) : setIsValid(true);
     setName(nameValue);
   };
 

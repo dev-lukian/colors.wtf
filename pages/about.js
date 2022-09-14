@@ -19,7 +19,7 @@ export default function About() {
           <div className={styles.contentWrapper}>
             <div className={styles.contentBlock}>
               colors.wtf is a unique collection of the 16,777,216 possible rgb colors. Every color is created by
-              mixing 2 existing colors in the collection, with each channel going through the following
+              mixing 2 existing colors in the collection with each channel going through the following
               formula:
             </div>
             <div className={cn('code')}>floor((a + b)/2)</div>
@@ -34,7 +34,7 @@ export default function About() {
               rel="noopener noreferrer"
               className="full-width"
             >
-              <div className={cn('code')}>0x64a5344cE09340688D59CdE552bf93AeF9F77a45</div>
+              <div className={cn('code')}>0x3A0106d2dc417b7872659A59FB4f38c048706dbd</div>
             </a>
             <div className={styles.contentBlock}>
               The only colors that were provided at the contracts inception were the 8 base colors, the rest are mixed
@@ -99,7 +99,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className={styles.finalWords}></div>
+          <div className={styles.finalWords}>Have fun mixing!</div>
           <div className={styles.creatorsWrapper}>
             <div className={styles.createdBy}>colors.wtf team,</div>
             <div className={styles.profileCardsWrapper}>
@@ -112,9 +112,9 @@ export default function About() {
                   b: 0,
                 }}
                 socials={{
-                  instagram: 'https://instagram.com/cameron.morrongiello/',
-                  twitter: 'https://twitter.com/colors_wtf/',
-                  linkedin: 'https://www.linkedin.com/in/cameron-morrongiello/',
+                  instagram: 'https://instagram.com/cameron.morrongiello',
+                  twitter: 'https://instagram.com/cameron.morrongiello',
+                  linkedin: 'https://instagram.com/cameron.morrongiello',
                 }}
               />
 
@@ -127,9 +127,9 @@ export default function About() {
                   b: 0,
                 }}
                 socials={{
-                  instagram: 'https://www.instagram.com/l_ukian/',
-                  twitter: 'https://twitter.com/colors_wtf/',
-                  linkedin: 'https://www.linkedin.com/in/lukianb/',
+                  instagram: 'https://instagram.com/cameron.morrongiello',
+                  twitter: 'https://instagram.com/cameron.morrongiello',
+                  linkedin: 'https://instagram.com/cameron.morrongiello',
                 }}
               />
 
@@ -142,9 +142,9 @@ export default function About() {
                   b: 255,
                 }}
                 socials={{
-                  instagram: 'https://www.instagram.com/vladcmunteanu/',
-                  twitter: 'https://twitter.com/colors_wtf/',
-                  linkedin: 'https://www.linkedin.com/in/vladcmunteanu/',
+                  instagram: 'https://instagram.com/cameron.morrongiello',
+                  twitter: 'https://instagram.com/cameron.morrongiello',
+                  linkedin: 'https://instagram.com/cameron.morrongiello',
                 }}
               />
             </div>
