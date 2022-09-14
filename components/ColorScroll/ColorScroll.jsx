@@ -8,8 +8,8 @@ import Close from '../../public/close.svg';
 import ColorGrid from '../ColorGrid/ColorGrid';
 import styles from './ColorScroll.module.css';
 
-import getSearchedColors from '../../services/colorsService';
-import colorSearchQuery from '../../queries/colorQuery';
+import querySubgraph from '../../services/colorsService';
+import { colorSearchQuery } from '../../queries/colorQuery';
 
 const FILTER_OPTIONS = [
   <option key="Pink" value="Pink">
@@ -453,7 +453,7 @@ const ColorScroll = ({ modal }) => {
         searchValue: search.value,
       });
 
-      getSearchedColors(query).then((data) => {
+      querySubgraph(query).then((data) => {
         if (mounted) {
           let visableColors = [];
           data.data?.tokens.map((color) => {

@@ -79,7 +79,7 @@ const Navbar = () => {
         </a>
       </Link>
       <div>
-        BETA
+        GOERLI TESTNET
       </div>
       </div>
       <div className={styles.buttonWrapper}>
