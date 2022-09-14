@@ -38,7 +38,9 @@ export function parentsQuery(parent1Id, parent2Id) {
         rgb 
         name
         html
-        createdAt 
+        createdAt
+        parent1Id
+        parent2Id  
         owner { 
           id
         }
@@ -47,7 +49,9 @@ export function parentsQuery(parent1Id, parent2Id) {
         rgb 
         name
         html
-        createdAt 
+        createdAt
+        parent1Id
+        parent2Id  
         owner { 
           id
         }
